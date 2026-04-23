@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+    /* Paleta Heritage - Champagne & Graphite */
+    --bg: #F7F3F0;      /* Bege suave / Off-white */
+    --primary: #2A2A2A;  /* Grafite profundo */
+    --accent: #C5A059;   /* Champagne Gold */
+    --white: #FFFFFF;
+    --text-muted: #666666;
+    
+    /* Tipografia */
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Grids & Spacing */
+    --container-max: 1400px;
+    --section-pad: clamp(80px, 12vw, 160px);
+    --transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- BASE (Mobile-First) --- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- TYPOGRAPHY --- */
+h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+h1 { font-size: clamp(3rem, 10vw, 5.5rem); letter-spacing: -0.02em; }
+h2 { font-size: clamp(2.2rem, 6vw, 3.8rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+
+p {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    font-weight: 300;
+    max-width: 60ch;
+    color: var(--text-muted);
+}
+
+.tag {
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+/* --- LAYOUT STRUCTURE --- */
+.section {
+    width: 100%;
+    position: relative;
+    padding: var(--section-pad) 0;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.grid-editorial {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+}
+
+@media (min-width: 1024px) {
+    .grid-editorial {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8rem;
+        align-items: center;
+    }
+}
+
+/* --- COMPONENTS --- */
+.btn {
+    display: inline-block;
+    padding: 1.25rem 2.8rem;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #000;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.btn-secondary {
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+/* --- HEADER --- */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 2rem 0;
+    transition: var(--transition);
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--primary);
+}
+
+.logo span { color: var(--accent); }
+
+nav ul { display: none; }
+
+@media (min-width: 1024px) {
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 3rem;
+    }
+    
+    nav a {
+        text-decoration: none;
+        color: var(--primary);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        transition: 0.3s;
+    }
+    nav a:hover { color: var(--accent); }
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+    background: var(--bg);
+    position: relative;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    z-index: 2;
+}
+
+@media (min-width: 1024px) {
+    .hero-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.hero-image-side {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+@media (min-width: 1024px) {
+    .hero-image-side {
+        width: 50%;
+        opacity: 1;
+        clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+}
+
+.hero-image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- PROPERTY CARDS --- */
+.property-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+}
+
+@media (min-width: 768px) {
+    .property-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1200px) {
+    .property-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.property-card {
+    position: relative;
+    transition: var(--transition);
+}
+
+.property-img {
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.property-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.5s ease;
+}
+
+.property-card:hover .property-img img { transform: scale(1.08); }
+
+.property-info h3 { margin-bottom: 0.5rem; }
+.property-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+}
+
+/* --- ANIMATIONS --- */
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: var(--transition);
+}
+
+[data-reveal].visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- WHATSAPP FLOATING --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    z-index: 1000;
+    background: var(--primary);
+    color: white;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    transition: var(--transition);
+}
+
+.whatsapp-float:hover {
+    background: var(--accent);
+    transform: scale(1.1) translateY(-5px);
+}

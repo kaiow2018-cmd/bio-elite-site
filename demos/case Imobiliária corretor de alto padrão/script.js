@@ -1,100 +1,59 @@
-/* 
-   INTERACTIVE LOGIC: Heritage & Skyline
-   Focado em transições suaves e UX premium
-*/
-
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. Header Scroll Effect
-    const header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
+    // 1. Inicializar Ícones Lucide
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
 
-    // 2. Scroll Reveal Animation
-    const revealElements = document.querySelectorAll('[data-reveal]');
+    // 2. Sistema de Revelação (Intersection Observer)
+    const revealOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('active');
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
             }
         });
-    }, {
-        threshold: 0.1
+    }, revealOptions);
+
+    document.querySelectorAll('[data-reveal]').forEach(el => {
+        revealObserver.observe(el);
     });
 
-    revealElements.forEach(el => revealObserver.observe(el));
-
-    // 3. Modal Logic
-    const modal = document.getElementById('modal');
-    const openBtn = document.getElementById('open-form');
-    const closeBtn = document.getElementById('close-modal');
-
-    if(openBtn) {
-        openBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // Prevent scroll
-        });
-    }
-
-    if(closeBtn) {
-        closeBtn.addEventListener('click', () => {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        });
-    }
-
-    // Close modal on outside click
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
+    // 3. Header Scroll Effect
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.style.background = 'rgba(247, 243, 240, 0.95)';
+            header.style.backdropFilter = 'blur(10px)';
+            header.style.boxShadow = '0 10px 30px rgba(0,0,0,0.03)';
+            header.style.padding = '1.2rem 0';
+        } else {
+            header.style.background = 'transparent';
+            header.style.backdropFilter = 'none';
+            header.style.boxShadow = 'none';
+            header.style.padding = '2rem 0';
         }
-    });
+    }, { passive: true });
 
-    // 4. Form Submission (Mock)
-    const form = document.getElementById('consult-form');
-    if(form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = form.querySelector('button');
-            const originalText = btn.innerText;
-            
-            btn.innerText = 'ENVIANDO...';
-            btn.disabled = true;
-
-            setTimeout(() => {
-                btn.innerText = 'SOLICITAÇÃO ENVIADA COM SUCESSO';
-                btn.style.background = '#C5A059';
-                form.reset();
-                
-                setTimeout(() => {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                    btn.innerText = originalText;
-                    btn.disabled = false;
-                    btn.style.background = '';
-                }, 2000);
-            }, 1500);
-        });
-    }
-
-    // 5. Smooth Scroll for Nav Links
+    // 4. Smooth Scroll para links internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
+            const href = this.getAttribute('href');
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
             }
         });
     });
-
 });

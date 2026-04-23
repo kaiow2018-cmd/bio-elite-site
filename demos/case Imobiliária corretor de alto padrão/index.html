@@ -3,239 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curadoria Imobiliária — Consultoria de Alto Padrão em Goiânia</title>
-    <meta name="description" content="Especialista em imóveis de luxo no Setor Marista, Bueno e Jardins. Curadoria exclusiva e consultoria personalizada para investidores e famílias.">
+    <title>Curadoria Imobiliária | Heritage & Skyline Goiânia</title>
+    <meta name="description" content="Consultoria imobiliária de alto padrão focada em ativos de luxo e investimentos estratégicos em Goiânia.">
     
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
     
-    <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-    <!-- Header -->
     <header id="header">
-        <div class="container nav-container">
-            <div class="logo">HERITAGE <span class="text-gold">&</span> SKYLINE</div>
-            <nav class="nav-links">
-                <a href="#profiles">Perfis</a>
-                <a href="#consultancy">Metodologia</a>
-                <a href="#showcase">Vitrine</a>
-                <a href="#about">Especialista</a>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">HERITAGE <span>&</span> SKYLINE</a>
+            <nav>
+                <ul>
+                    <li><a href="#profiles">Segmentos</a></li>
+                    <li><a href="#consultancy">Metodologia</a></li>
+                    <li><a href="#showcase">Vitrine</a></li>
+                    <li><a href="#about">Especialista</a></li>
+                </ul>
             </nav>
             <a href="#contact" class="btn btn-secondary" style="padding: 0.8rem 1.5rem; font-size: 0.7rem;">Consultoria</a>
         </div>
     </header>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content" data-reveal>
-                <span class="hero-tagline uppercase">Curadoria Imobiliária em Goiânia</span>
-                <h1>A arte de viver com <span class="text-gold">exclusividade</span>.</h1>
-                <p>Consultoria estratégica focada em ativos imobiliários de alto padrão e segurança jurídica absoluta.</p>
-                <div class="hero-btns">
-                    <a href="#contact" class="btn btn-primary">Solicitar Seleção Exclusiva</a>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content" data-reveal>
+                    <span class="tag">Curadoria Imobiliária Goiânia</span>
+                    <h1>A arte de viver com exclusividade.</h1>
+                    <p>Consultoria estratégica focada em ativos de alto padrão no Setor Marista, Bueno e Jardins.</p>
+                    <div style="margin-top: 3rem;">
+                        <a href="#contact" class="btn btn-primary">Solicitar Seleção Exclusiva</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="hero-image">
-            <img src="assets/images/hero.png" alt="Arquitetura de Luxo em Goiânia">
-        </div>
-    </section>
+            <div class="hero-image-side">
+                <img src="assets/images/hero.png" alt="Arquitetura de Luxo" loading="eager" decoding="async">
+            </div>
+        </section>
 
-    <!-- Perfis (Para quem é) -->
-    <section id="profiles" class="section">
-        <div class="container">
-            <div class="text-center" style="margin-bottom: 5rem;">
-                <span class="uppercase text-gold">Segmentos</span>
-                <h2 style="font-size: 3rem; margin-top: 1rem;">Soluções sob medida para o seu momento.</h2>
-            </div>
-            
-            <div class="profile-grid">
-                <div class="profile-card" data-reveal>
-                    <span class="text-gold">01.</span>
-                    <h3>Upgrade de Patrimônio</h3>
-                    <p>Para famílias que buscam expansão, conforto e as localizações mais nobres do Setor Marista e Bueno.</p>
+        <!-- Segmentos -->
+        <section id="profiles" class="section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 6rem;" data-reveal>
+                    <span class="tag">Perfis</span>
+                    <h2>Soluções sob medida para o seu momento de vida.</h2>
                 </div>
-                <div class="profile-card" data-reveal>
-                    <span class="text-gold">02.</span>
-                    <h3>Investimento Premium</h3>
-                    <p>Análise técnica de rentabilidade, vacância e potencial de valorização em lançamentos exclusivos.</p>
-                </div>
-                <div class="profile-card" data-reveal>
-                    <span class="text-gold">03.</span>
-                    <h3>Expats & Brasileiros no Exterior</h3>
-                    <p>Assessoria completa para aquisição remota com total segurança jurídica e curadoria de confiança.</p>
-                </div>
-                <div class="profile-card" data-reveal>
-                    <span class="text-gold">04.</span>
-                    <h3>Primeira Mansão</h3>
-                    <p>Busca detalhada em condomínios fechados (Jardins, Alphaville) com foco em estilo de vida e privacidade.</p>
+                
+                <div class="grid-editorial" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                    <div class="property-card" data-reveal style="background: white; padding: 3rem; border: 1px solid rgba(0,0,0,0.05);">
+                        <span class="text-gold" style="font-size: 1.5rem; display: block; margin-bottom: 1rem;">01.</span>
+                        <h3>Upgrade de Patrimônio</h3>
+                        <p style="font-size: 0.95rem;">Para famílias que buscam expansão e as localizações mais nobres da cidade.</p>
+                    </div>
+                    <div class="property-card" data-reveal style="transition-delay: 0.1s; background: white; padding: 3rem; border: 1px solid rgba(0,0,0,0.05);">
+                        <span class="text-gold" style="font-size: 1.5rem; display: block; margin-bottom: 1rem;">02.</span>
+                        <h3>Investimento Premium</h3>
+                        <p style="font-size: 0.95rem;">Análise técnica de rentabilidade e potencial de valorização em lançamentos exclusivos.</p>
+                    </div>
+                    <div class="property-card" data-reveal style="transition-delay: 0.2s; background: white; padding: 3rem; border: 1px solid rgba(0,0,0,0.05);">
+                        <span class="text-gold" style="font-size: 1.5rem; display: block; margin-bottom: 1rem;">03.</span>
+                        <h3>Expat & Remote</h3>
+                        <p style="font-size: 0.95rem;">Assessoria completa para aquisição remota com total segurança jurídica.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Metodologia -->
-    <section id="consultancy" class="section" style="background: var(--color-primary); color: var(--color-white);">
-        <div class="container">
-            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; align-items: center;">
-                <div>
-                    <span class="uppercase text-gold">Metodologia Consultiva</span>
-                    <h2 style="font-size: 3rem; margin-top: 1rem;">Não vendemos imóveis. Curamos oportunidades.</h2>
-                    <p style="margin-top: 2rem; color: #aaa;">Nosso processo é baseado em discrição, inteligência de mercado e um atendimento que entende a complexidade de negociações de alto valor.</p>
-                    <a href="#contact" class="btn btn-secondary" style="border-color: var(--color-accent); color: var(--color-accent); margin-top: 2rem;">Conhecer Processo</a>
+        <!-- Metodologia -->
+        <section id="consultancy" class="section" style="background: var(--primary); color: white;">
+            <div class="container grid-editorial">
+                <div data-reveal>
+                    <span class="tag" style="color: var(--accent);">Nossa Inteligência</span>
+                    <h2 style="color: white;">Não vendemos imóveis. Curamos oportunidades únicas.</h2>
+                    <p style="margin-top: 2rem; color: #999;">Nosso processo é baseado em discrição absoluta e um profundo entendimento do mercado Off-Market.</p>
                 </div>
-                <div class="grid" style="gap: 2rem;">
-                    <div style="border-left: 2px solid var(--color-accent); padding-left: 2rem;">
-                        <h4 style="font-size: 1.5rem;">01. Imersão</h4>
-                        <p style="color: #888;">Entendimento profundo das necessidades, objetivos e perfil do cliente.</p>
+                
+                <div style="display: flex; flex-direction: column; gap: 3rem;">
+                    <div style="border-left: 2px solid var(--accent); padding-left: 2rem;" data-reveal>
+                        <h4 style="font-size: 1.5rem; color: white;">01. Imersão</h4>
+                        <p style="font-size: 0.9rem;">Entendimento minucioso do estilo de vida e objetivos financeiros do cliente.</p>
                     </div>
-                    <div style="border-left: 2px solid var(--color-accent); padding-left: 2rem;">
-                        <h4 style="font-size: 1.5rem;">02. Curadoria Técnica</h4>
-                        <p style="color: #888;">Busca ativa "off-market" e análise de ativos compatíveis com o perfil.</p>
+                    <div style="border-left: 2px solid var(--accent); padding-left: 2rem;" data-reveal style="transition-delay: 0.1s;">
+                        <h4 style="font-size: 1.5rem; color: white;">02. Busca Ativa</h4>
+                        <p style="font-size: 0.9rem;">Acesso prioritário a ativos que ainda não chegaram ao mercado aberto.</p>
                     </div>
-                    <div style="border-left: 2px solid var(--color-accent); padding-left: 2rem;">
-                        <h4 style="font-size: 1.5rem;">03. Visitas Guiadas</h4>
-                        <p style="color: #888;">Análise "in loco" com olhar técnico sobre acabamento, vizinhança e liquidez.</p>
+                    <div style="border-left: 2px solid var(--accent); padding-left: 2rem;" data-reveal style="transition-delay: 0.2s;">
+                        <h4 style="font-size: 1.5rem; color: white;">03. Negociação de Elite</h4>
+                        <p style="font-size: 0.9rem;">Condução estratégica para garantir as melhores condições e sigilo total.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Vitrine -->
-    <section id="showcase" class="section">
-        <div class="container">
-            <div class="vitrine-header text-center">
-                <span class="uppercase text-gold">Portfólio Conceitual</span>
-                <h2 style="font-size: 3rem; margin-top: 1rem;">Obras-primas da arquitetura goiana.</h2>
+        <!-- Vitrine -->
+        <section id="showcase" class="section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 6rem;" data-reveal>
+                    <span class="tag">Portfólio</span>
+                    <h2>Obras-primas da arquitetura.</h2>
+                </div>
+                
+                <div class="property-grid">
+                    <article class="property-card" data-reveal>
+                        <div class="property-img">
+                            <img src="assets/images/penthouse.png" alt="Penthouse" loading="lazy">
+                        </div>
+                        <div class="property-info">
+                            <h3>Penthouse Horizon</h3>
+                            <div class="property-meta">
+                                <span>Setor Marista</span>
+                                <span>450m² • 4 Suítes</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="property-card" data-reveal style="transition-delay: 0.1s;">
+                        <div class="property-img">
+                            <img src="assets/images/mansion.png" alt="Mansão" loading="lazy">
+                        </div>
+                        <div class="property-info">
+                            <h3>Maison Éclat</h3>
+                            <div class="property-meta">
+                                <span>Jardins</span>
+                                <span>800m² • 5 Suítes</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="property-card" data-reveal style="transition-delay: 0.2s;">
+                        <div class="property-img">
+                            <img src="assets/images/boutique.png" alt="Apartment" loading="lazy">
+                        </div>
+                        <div class="property-info">
+                            <h3>L'Unité Residences</h3>
+                            <div class="property-meta">
+                                <span>Setor Bueno</span>
+                                <span>280m² • 3 Suítes</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
-            
-            <div class="property-grid">
-                <!-- Card 1 -->
-                <div class="property-card" data-reveal>
-                    <div class="property-img">
-                        <img src="assets/images/penthouse.png" alt="Penthouse Setor Marista">
-                    </div>
-                    <div class="property-info">
-                        <h3>Penthouse Horizon</h3>
-                        <div class="property-details">
-                            <span>Setor Marista</span>
-                            <span>450m² • 4 Suítes</span>
+        </section>
+
+        <!-- Especialista -->
+        <section id="about" class="section" style="background: white;">
+            <div class="container grid-editorial">
+                <div style="padding: 1rem; background: var(--bg);" data-reveal>
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800" alt="Consultor" style="filter: grayscale(100%); width: 100%;">
+                </div>
+                <div data-reveal>
+                    <span class="tag">A Mente</span>
+                    <h2>Compromisso com o seu legado e privacidade.</h2>
+                    <p style="margin-top: 2rem;">Com mais de uma década no mercado de luxo, desenvolvi uma abordagem baseada em sigilo absoluto e curadoria extrema.</p>
+                    <div style="display: flex; gap: 4rem; margin-top: 4rem;">
+                        <div>
+                            <h4 style="font-size: 2rem;">R$ 2B+</h4>
+                            <span class="tag" style="font-size: 0.6rem; margin: 0;">Em ativos negociados</span>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 2rem;">100%</h4>
+                            <span class="tag" style="font-size: 0.6rem; margin: 0;">Sigilo Garantido</span>
                         </div>
                     </div>
                 </div>
-                <!-- Card 2 -->
-                <div class="property-card" data-reveal>
-                    <div class="property-img">
-                        <img src="assets/images/mansion.png" alt="Mansão em Condomínio">
-                    </div>
-                    <div class="property-info">
-                        <h3>Maison Éclat</h3>
-                        <div class="property-details">
-                            <span>Jardins</span>
-                            <span>800m² • 5 Suítes</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="property-card" data-reveal>
-                    <div class="property-img">
-                        <img src="assets/images/boutique.png" alt="Apartamento Boutique">
-                    </div>
-                    <div class="property-info">
-                        <h3>L'Unité Residences</h3>
-                        <div class="property-details">
-                            <span>Setor Bueno</span>
-                            <span>280m² • 3 Suítes</span>
-                        </div>
-                    </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section id="contact" class="section" style="background: var(--bg); text-align: center;">
+            <div class="container" style="max-width: 800px;">
+                <span class="tag" data-reveal>Conexão Privada</span>
+                <h2 data-reveal>Inicie sua consultoria imobiliária agora.</h2>
+                <p style="margin: 3rem auto;" data-reveal>Escolha o melhor canal para sua primeira conversa. Garantimos discrição absoluta e atendimento personalizado.</p>
+                
+                <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;" data-reveal>
+                    <a href="https://wa.me/5562999999999" class="btn btn-primary">Falar no WhatsApp</a>
+                    <a href="mailto:contato@heritage.com" class="btn btn-secondary">Enviar E-mail</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Sobre / Bio -->
-    <section id="about" class="section" style="background: #efece9;">
-        <div class="container grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; align-items: center;">
-            <div style="background: #fff; padding: 1rem; box-shadow: 0 30px 60px rgba(0,0,0,0.05);">
-                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800" alt="Consultor Imobiliário" style="filter: grayscale(100%);">
-            </div>
-            <div>
-                <span class="uppercase text-gold">O Especialista</span>
-                <h2 style="font-size: 3rem; margin-top: 1rem;">Compromisso com o seu legado.</h2>
-                <p style="margin-top: 2rem;">Com mais de 10 anos de atuação no mercado de luxo de Goiânia, desenvolvi uma abordagem baseada em sigilo absoluto e curadoria técnica extrema. Minha missão é garantir que cada aquisição seja mais que um imóvel, seja um ativo de valor perpétuo.</p>
-                <div class="grid" style="grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 3rem;">
-                    <div>
-                        <h4 style="font-size: 2rem; margin-bottom: 0;">R$ 2B+</h4>
-                        <p class="uppercase" style="font-size: 0.6rem;">Negociados</p>
-                    </div>
-                    <div>
-                        <h4 style="font-size: 2rem; margin-bottom: 0;">100%</h4>
-                        <p class="uppercase" style="font-size: 0.6rem;">Sigilo Judicial</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Final / Contato -->
-    <section id="contact" class="section text-center">
-        <div class="container" style="max-width: 800px;">
-            <span class="uppercase text-gold">Contato Privado</span>
-            <h2 style="font-size: 4rem; margin-top: 1rem; margin-bottom: 2rem;">Inicie sua consultoria agora.</h2>
-            <p style="margin-bottom: 4rem; color: var(--color-text-muted);">Escolha o melhor canal para sua primeira conversa. Garantimos discrição absoluta e atendimento personalizado.</p>
-            
-            <div class="flex" style="flex-wrap: wrap; justify-content: center; gap: 2rem;">
-                <a href="#form-modal" class="btn btn-primary" id="open-form">Agendar Consultoria (Formulário)</a>
-                <a href="https://wa.me/5562999999999" class="btn btn-secondary"><i class="fab fa-whatsapp"></i> Conversar via WhatsApp</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="section" style="background: var(--color-primary); color: #666; padding-top: 4rem; padding-bottom: 4rem; border-top: 1px solid #333;">
+    <footer style="padding: 5rem 0; background: var(--primary); color: #666; border-top: 1px solid #333;">
         <div class="container text-center">
-            <div class="logo" style="color: #fff; margin-bottom: 2rem;">HERITAGE <span class="text-gold">&</span> SKYLINE</div>
-            <p style="font-size: 0.8rem; letter-spacing: 1px;">© 2026 CURADORIA IMOBILIÁRIA. GOIÂNIA, GO. TODOS OS DIREITOS RESERVADOS.</p>
+            <div class="logo" style="color: white; margin-bottom: 2rem;">HERITAGE <span>&</span> SKYLINE</div>
+            <p style="font-size: 0.7rem; letter-spacing: 2px;">© 2026 CURADORIA IMOBILIÁRIA. TODOS OS DIREITOS RESERVADOS.</p>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating -->
+    <!-- WhatsApp Sticky -->
     <a href="https://wa.me/5562999999999" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
+        <i data-lucide="message-circle"></i>
     </a>
 
-    <!-- Modal Form Concept -->
-    <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:2000; align-items:center; justify-content:center; padding: 2rem;">
-        <div style="background:#fff; padding:3rem; max-width:600px; width:100%; position:relative;">
-            <button id="close-modal" style="position:absolute; top:1rem; right:1rem; border:none; background:none; font-size:1.5rem; cursor:pointer;">&times;</button>
-            <h3 style="font-size:2rem; margin-bottom:1.5rem;">Formulário de Qualificação</h3>
-            <p style="margin-bottom:2rem; color:#666; font-size:0.9rem;">Para melhor atendê-lo, preencha brevemente seus interesses.</p>
-            <form id="consult-form">
-                <input type="text" placeholder="Nome Completo" style="width:100%; padding:1rem; margin-bottom:1rem; border:1px solid #ddd;">
-                <input type="email" placeholder="E-mail Corporativo" style="width:100%; padding:1rem; margin-bottom:1rem; border:1px solid #ddd;">
-                <select style="width:100%; padding:1rem; margin-bottom:1rem; border:1px solid #ddd; appearance:none;">
-                    <option>Interesse Principal</option>
-                    <option>Investimento</option>
-                    <option>Moradia</option>
-                    <option>Venda de Ativo</option>
-                </select>
-                <textarea placeholder="Breve descrição do perfil buscado" style="width:100%; padding:1rem; margin-bottom:2rem; border:1px solid #ddd; height:100px;"></textarea>
-                <button type="submit" class="btn btn-primary" style="width:100%;">Enviar Solicitação</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 </html>
