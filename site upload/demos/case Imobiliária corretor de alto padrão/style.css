@@ -1,0 +1,363 @@
+/* 
+   DESIGN SYSTEM: Heritage & Skyline (Goiânia)
+   ESTÉTICA: Quiet Luxury / Minimalismo Editorial
+   MOBILE-FIRST APPROACH
+*/
+
+:root {
+    /* Colors */
+    --color-primary: #2A2A2A;    /* Graphite */
+    --color-secondary: #F7F3F0;  /* Off-White/Soft Beige */
+    --color-accent: #C5A059;     /* Muted Gold */
+    --color-text: #333333;
+    --color-text-muted: #666666;
+    --color-white: #FFFFFF;
+    
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Spacing */
+    --space-unit: 1rem;
+    --section-padding: 5rem 1.5rem;
+    
+    /* Effects */
+    --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+/* @media for Desktop Expansion */
+@media (min-width: 768px) {
+    :root {
+        --section-padding: 8rem 4rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    :root {
+        --section-padding: 10rem 10%;
+    }
+}
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-smooth);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Layout Utilities */
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.section {
+    padding: var(--section-padding);
+}
+
+.flex { display: flex; }
+.grid { display: grid; }
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 1.2rem 2.5rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: #000;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* Typography Utilities */
+.text-center { text-align: center; }
+.text-gold { color: var(--color-accent); }
+.uppercase { text-transform: uppercase; letter-spacing: 3px; font-size: 0.75rem; }
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1.5rem 0;
+    transition: var(--transition-smooth);
+}
+
+header.scrolled {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: none; /* Mobile first hidden */
+}
+
+@media (min-width: 1024px) {
+    .nav-links {
+        display: flex;
+        gap: 3rem;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+    }
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: 80px;
+    background-color: var(--color-secondary);
+}
+
+.hero-content {
+    z-index: 2;
+    max-width: 600px;
+}
+
+.hero-tagline {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    color: var(--color-accent);
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 10vw, 5rem);
+    margin-bottom: 2rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    margin-bottom: 3rem;
+    max-width: 450px;
+}
+
+.hero-image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.15; /* Sutil em Mobile */
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+    .hero-image {
+        width: 55%;
+        opacity: 1;
+        clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    
+    .hero-content {
+        padding-right: 5rem;
+    }
+}
+
+/* Profiles Section */
+.profile-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .profile-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.profile-card {
+    background: var(--color-white);
+    padding: 3rem 2rem;
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: var(--transition-smooth);
+}
+
+.profile-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.profile-card span {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* Vitrine Section */
+.vitrine-header {
+    margin-bottom: 4rem;
+}
+
+.property-grid {
+    display: grid;
+    gap: 3rem;
+}
+
+@media (min-width: 768px) {
+    .property-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.property-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.property-img {
+    height: 400px;
+    overflow: hidden;
+}
+
+.property-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.property-card:hover .property-img img {
+    transform: scale(1.05);
+}
+
+.property-info {
+    padding: 1.5rem 0;
+}
+
+.property-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.property-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-text-muted);
+}
+
+/* Floating WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+    z-index: 999;
+}
+
+/* Animations */
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition-smooth);
+}
+
+[data-reveal].active {
+    opacity: 1;
+    transform: translateY(0);
+}
