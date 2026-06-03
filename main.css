@@ -1137,10 +1137,19 @@ h1, h2, h3 {
     }
     .site-preview-wrapper {
         height: 250px;
-        background-image: url('hero_elite.webp'); /* Usa um fallback visual leve */
         background-size: cover;
         background-position: top center;
         filter: grayscale(1) brightness(0.5);
+    }
+    /* Fallback visual premium mobile com as artes originais de cada case */
+    .bento-item[data-demo*="advogado-case"] .site-preview-wrapper {
+        background-image: url('demos/advogado-case/assets/hero.png');
+    }
+    .bento-item[data-demo*="case-estetica"] .site-preview-wrapper {
+        background-image: url('demos/case-estetica/hero.png');
+    }
+    .bento-item[data-demo*="case-imobiliaria"] .site-preview-wrapper {
+        background-image: url('demos/case-imobiliaria/assets/images/hero.png');
     }
 }
 
