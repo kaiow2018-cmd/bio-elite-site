@@ -83,15 +83,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 3. BENTO INTERACTIVE GLOW & LAZY PREVIEW ---
     const bentoItems = document.querySelectorAll('.bento-item');
+    /* Otimização de Performance: Iframes internos desativados para evitar travamento mobile.
+       O carregamento agora ocorre apenas no clique para abrir o Modal de Elite. */
     const previewObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const iframe = entry.target.querySelector('iframe');
-                if (iframe && !iframe.src) {
-                    iframe.src = iframe.getAttribute('data-src');
-                }
-            }
-        });
+        // Observer mantido para futuras animações, mas sem carregar iframes pesados
     }, { threshold: 0.1 });
 
     bentoItems.forEach(item => {

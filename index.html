@@ -6,17 +6,22 @@
     <meta name="description" content="Kaio Páginas - Web Designer de Elite especializado em Landing Pages de Alta Conversão e Design Estratégico.">
     <title>Kaio | Páginas que Vendem</title>
     
+    <!-- Preload Fontes (Alta Performance) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+
     <!-- CSS -->
-    <link rel="stylesheet" href="main.css?v=9">
+    <link rel="stylesheet" href="main.css?v=10">
 </head>
 <body>
 
 
     <!-- HERO SECTION -->
-    <header class="section hero reveal">
+    <header class="section hero">
         <!-- Hero Background Layer -->
         <div class="hero-bg">
-            <img src="hero_elite.webp" alt="Kaio Background">
+            <img src="hero_elite.webp" alt="Kaio Background" fetchpriority="high" decoding="async">
             <div class="hero-overlay"></div>
         </div>
 
@@ -24,7 +29,7 @@
         <div class="glow-blob glow-accent"></div>
         <div class="glow-blob glow-secondary"></div>
         
-        <div class="hero-content">
+        <div class="hero-content hero-entrance">
             <h1 class="hero-large text-gradient">DESIGN QUE <br><span class="cyan-neon">GERA LUCRO.</span></h1>
             <p class="hero-subtext">Crio landing pages premium para marcas que não aceitam o genérico. Transformo sua autoridade em uma máquina de conversão impossível de ignorar.</p>
             <div class="hero-actions">
@@ -140,9 +145,9 @@
 
             <div class="bento-showcase">
                 <!-- Project 1 (Destaque Wide) -->
-                <div class="bento-item featured reveal" data-demo="demos/advogado%20case/index.html">
+                <div class="bento-item featured reveal" data-demo="demos/advogado-case/index.html">
                     <div class="site-preview-wrapper">
-                        <iframe class="site-preview-iframe" data-src="demos/advogado%20case/index.html" loading="lazy"></iframe>
+                        <iframe class="site-preview-iframe" data-src="demos/advogado-case/index.html" loading="lazy"></iframe>
                     </div>
                     <div class="item-overlay"></div>
                     <span class="item-tag">Jurídico • Alta Performance</span>
@@ -150,9 +155,9 @@
                 </div>
 
                 <!-- Project 2 -->
-                <div class="bento-item reveal" data-demo="demos/case%20estética/index.html">
+                <div class="bento-item reveal" data-demo="demos/case-estetica/index.html">
                     <div class="site-preview-wrapper">
-                        <iframe class="site-preview-iframe" data-src="demos/case%20estética/index.html" loading="lazy"></iframe>
+                        <iframe class="site-preview-iframe" data-src="demos/case-estetica/index.html" loading="lazy"></iframe>
                     </div>
                     <div class="item-overlay"></div>
                     <span class="item-tag">Saúde • High-Ticket</span>
@@ -160,9 +165,9 @@
                 </div>
 
                 <!-- Project 3 -->
-                <div class="bento-item reveal" data-demo="demos/case%20Imobiliária%20corretor%20de%20alto%20padrão/index.html">
+                <div class="bento-item reveal" data-demo="demos/case-imobiliaria/index.html">
                     <div class="site-preview-wrapper">
-                        <iframe class="site-preview-iframe" data-src="demos/case%20Imobiliária%20corretor%20de%20alto%20padrão/index.html" loading="lazy"></iframe>
+                        <iframe class="site-preview-iframe" data-src="demos/case-imobiliaria/index.html" loading="lazy"></iframe>
                     </div>
                     <div class="item-overlay"></div>
                     <span class="item-tag">Real Estate • Luxo</span>

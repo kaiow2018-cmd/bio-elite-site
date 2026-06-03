@@ -4,7 +4,9 @@
  * Focus: High-Scale Typography, Strategic Spacing, Authority
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@600;700;800;900&display=swap');
+/* 
+ * Fonte movida para o index.html (Preload) para otimização de FCP 
+ */
 
 :root {
     /* Color Palette - Cyber-Luxury Base */
@@ -250,6 +252,16 @@ h1, h2, h3 {
     max-width: 900px;
     position: relative;
     z-index: 2;
+}
+
+/* Animação CSS Pura para não depender de JS no LCP */
+@keyframes heroFadeUp {
+    0% { opacity: 0.01; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.hero-entrance {
+    animation: heroFadeUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 .hero-visual {
@@ -976,7 +988,6 @@ h1, h2, h3 {
     box-shadow: 0 10px 30px hsla(180, 100%, 50%, 0.5);
     z-index: 1000;
     transition: all 0.5s var(--ease);
-    animation: pulse-green 2s infinite;
     border: 2px solid #fff;
     opacity: 0; /* Hidden by default */
     transform: translateY(100px) scale(0.5); /* Start from bottom */
@@ -1098,6 +1109,39 @@ h1, h2, h3 {
 .quote-card,
 .stat-item {
     will-change: transform, opacity;
+}
+
+/* Otimização dos Iframes para Mobile */
+.site-preview-wrapper {
+    background: linear-gradient(135deg, #111 0%, #222 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.site-preview-wrapper::after {
+    content: 'CLIQUE PARA EXPLORAR';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    color: hsla(var(--text-low) / 0.3);
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .site-preview-iframe {
+        display: none; /* Remove o peso dos iframes no mobile */
+    }
+    .site-preview-wrapper {
+        height: 250px;
+        background-image: url('hero_elite.webp'); /* Usa um fallback visual leve */
+        background-size: cover;
+        background-position: top center;
+        filter: grayscale(1) brightness(0.5);
+    }
 }
 
 /* MOBILE GPU SAVER (Reducing backdrop-filter intensity) */
