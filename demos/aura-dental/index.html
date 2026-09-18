@@ -6,14 +6,14 @@
   <title>Aura Dental Clinic • Odontologia Moderna com Cuidado Gentil</title>
   <meta name="description" content="Odontologia de alta precisão para sorrisos saudáveis e confiantes em todas as idades — com conforto absoluto, tecnologia 3D e previsibilidade clínica." />
 
-  <!-- Google Fonts: Plus Jakarta Sans (Monumental Geometric Bold) -->
+  <!-- Google Fonts: Outfit (Exata da Referência do Pinterest) + Plus Jakarta Sans para leitura -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     /* ==========================================================================
-       RESET & ROOT TOKENS (QUIET LUXURY CLINICAL DENTAL)
+       RESET & ROOT TOKENS (QUIET LUXURY DENTAL)
        ========================================================================== */
     *, *::before, *::after {
       box-sizing: border-box;
@@ -22,7 +22,9 @@
     }
 
     :root {
-      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      /* Tipografia Idêntica ao Benchmark Pinterest */
+      --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
       --bg-page: #EDF1F5;
       --bg-card: #FFFFFF;
@@ -39,7 +41,7 @@
       --border-subtle: rgba(15, 23, 42, 0.08);
       --border-light: rgba(255, 255, 255, 0.20);
 
-      /* Menos Redondo: Radii refinados e sóbrios */
+      /* Menos Redondo: Radii sóbrios e aristocráticos */
       --radius-xs: 6px;
       --radius-sm: 10px;
       --radius-md: 14px;
@@ -60,7 +62,7 @@
     }
 
     body {
-      font-family: var(--font-main);
+      font-family: var(--font-body);
       background-color: var(--bg-page);
       color: var(--text-main);
       line-height: 1.6;
@@ -161,7 +163,7 @@
       transform: scale(1);
     }
 
-    /* Overlay de Contraste Fiel à Referência (Escurece para leitura sem tampar a foto) */
+    /* Overlay de Contraste Fiel ao Pinterest */
     .hero-gradient-overlay {
       position: absolute;
       inset: 0;
@@ -188,7 +190,7 @@
     }
 
     /* ==========================================================================
-       NAVBAR INTEGRADA EM CIMA DO HERO
+       NAVBAR INTEGRADA NO TOPO DO HERO
        ========================================================================== */
     .hero-navbar-inner {
       position: relative;
@@ -199,7 +201,7 @@
       gap: 20px;
     }
 
-    /* Logo Mais Interessante & Nobre */
+    /* Logo Mais Interessante & Aristocrático */
     .hero-brand {
       display: flex;
       align-items: center;
@@ -213,10 +215,10 @@
     }
 
     .brand-emblem-svg {
-      width: 32px;
-      height: 32px;
+      width: 34px;
+      height: 34px;
       flex-shrink: 0;
-      filter: drop-shadow(0 2px 8px rgba(13, 148, 136, 0.4));
+      filter: drop-shadow(0 2px 10px rgba(13, 148, 136, 0.45));
     }
 
     .brand-title-group {
@@ -225,7 +227,8 @@
     }
 
     .brand-title-main {
-      font-size: 19px;
+      font-family: var(--font-display);
+      font-size: 20px;
       font-weight: 800;
       letter-spacing: -0.5px;
       line-height: 1.1;
@@ -233,6 +236,7 @@
     }
 
     .brand-title-tag {
+      font-family: var(--font-display);
       font-size: 9.5px;
       font-weight: 700;
       letter-spacing: 1.8px;
@@ -261,9 +265,10 @@
     }
 
     .hero-nav-link {
-      font-size: 13px;
+      font-family: var(--font-display);
+      font-size: 13.5px;
       font-weight: 600;
-      color: rgba(255, 255, 255, 0.85);
+      color: rgba(255, 255, 255, 0.88);
       transition: var(--transition-fast);
     }
 
@@ -279,6 +284,7 @@
       gap: 12px;
       background: #FFFFFF;
       color: #0F172A;
+      font-family: var(--font-display);
       font-size: 12.5px;
       font-weight: 800;
       letter-spacing: 0.6px;
@@ -333,12 +339,13 @@
       }
     }
 
-    /* Tipografia Fiel à Referência: All-Caps Monumental Geometric Bold */
+    /* Tipografia Fiel ao Pinterest (Outfit 800 All-Caps Monumental) */
     .hero-main-title {
-      font-size: clamp(34px, 5.2vw, 64px);
+      font-family: var(--font-display);
+      font-size: clamp(34px, 5.2vw, 66px);
       font-weight: 800;
       line-height: 1.02;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.025em;
       color: #FFFFFF;
       text-transform: uppercase;
       text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -379,7 +386,8 @@
       align-items: center;
       gap: 12px;
       color: rgba(255, 255, 255, 0.75);
-      font-size: 12px;
+      font-family: var(--font-display);
+      font-size: 13px;
       font-weight: 700;
       letter-spacing: 1px;
     }
@@ -464,7 +472,8 @@
     }
 
     .doctor-card-name {
-      font-size: 15px;
+      font-family: var(--font-display);
+      font-size: 16px;
       font-weight: 800;
       color: var(--text-main);
       line-height: 1.2;
@@ -508,7 +517,8 @@
     }
 
     .hero-slide-btn {
-      font-size: 13px;
+      font-family: var(--font-display);
+      font-size: 13.5px;
       font-weight: 600;
       color: rgba(255, 255, 255, 0.9);
       background: rgba(255, 255, 255, 0.12);
@@ -531,7 +541,7 @@
       color: #0B131C;
       border-color: #FFFFFF;
       box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
-      font-weight: 700;
+      font-weight: 800;
       transform: translateY(-2px);
     }
 
@@ -562,6 +572,7 @@
     }
 
     .service-eyebrow {
+      font-family: var(--font-display);
       font-size: 12px;
       font-weight: 800;
       letter-spacing: 2px;
@@ -576,6 +587,7 @@
     }
 
     .service-main-headline {
+      font-family: var(--font-display);
       font-size: clamp(26px, 3.8vw, 44px);
       font-weight: 800;
       line-height: 1.12;
@@ -593,7 +605,7 @@
     /* Grid com Social Proof Lateral + 3 Cards Fotográficos */
     .services-main-row {
       display: grid;
-      grid-template-columns: 290px 1fr;
+      grid-template-columns: 310px 1fr;
       gap: 28px;
       align-items: stretch;
     }
@@ -604,73 +616,161 @@
       }
     }
 
-    /* Card Lateral de Avaliações */
-    .reviews-lateral-card {
-      background: #F8FAFC;
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 32px 24px;
+    /* ==========================================================================
+       CARD DE AVALIAÇÕES ASSIMÉTRICO (DIVIDIDO EM 2 BLOCOS ESTRUTURAIS)
+       ========================================================================== */
+    .asymmetric-reviews-card {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      gap: 24px;
+      gap: 14px;
+      height: 100%;
     }
 
-    .reviews-avatar-row {
+    /* Bloco Superior: Selo & Métricas */
+    .reviews-metric-block {
+      background: #0B131C;
+      color: #FFFFFF;
+      border-radius: var(--radius-md);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .metric-badge-header {
       display: flex;
       align-items: center;
-      gap: 14px;
+      justify-content: space-between;
     }
 
-    .avatars-overlap {
+    .google-verified-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      color: #34D399;
+      background: rgba(16, 185, 129, 0.15);
+      padding: 3px 8px;
+      border-radius: var(--radius-xs);
+    }
+
+    .metric-score-display {
       display: flex;
-      margin-left: 6px;
+      align-items: baseline;
+      gap: 8px;
     }
 
-    .avatar-face {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      border: 2px solid #FFFFFF;
-      margin-left: -10px;
-      object-fit: cover;
-    }
-
-    .reviews-score-col {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .score-big {
-      font-size: 22px;
+    .metric-score-number {
+      font-family: var(--font-display);
+      font-size: 32px;
       font-weight: 800;
-      color: var(--text-main);
+      color: #FFFFFF;
       line-height: 1;
     }
 
-    .score-label {
-      font-size: 11px;
-      color: var(--text-muted);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+    .metric-score-stars {
+      color: #FBBF24;
+      font-size: 14px;
+      letter-spacing: 2px;
     }
 
-    .reviews-quote-text {
-      font-size: 14px;
+    .metric-avatars-cluster {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatars-group {
+      display: flex;
+    }
+
+    .avatar-circle-img {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 2px solid #0B131C;
+      margin-left: -8px;
+      object-fit: cover;
+    }
+
+    .avatar-circle-img:first-child {
+      margin-left: 0;
+    }
+
+    .avatars-count-text {
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    /* Bloco Inferior: Depoimento Rotativo & Setas */
+    .reviews-quote-block {
+      background: #F8FAFC;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+      flex-grow: 1;
+    }
+
+    .quote-icon-mark {
+      color: var(--primary-teal);
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1;
+      font-family: serif;
+    }
+
+    .quote-statement {
+      font-size: 13.5px;
       color: var(--text-muted);
       line-height: 1.6;
       transition: opacity 0.25s ease;
+      min-height: 70px;
+    }
+
+    .quote-author-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(15, 23, 42, 0.06);
+      padding-top: 14px;
+    }
+
+    .quote-author-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .quote-author-name {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .quote-author-tag {
+      font-size: 11px;
+      color: var(--primary-teal);
+      font-weight: 600;
     }
 
     .arrows-round-row {
       display: flex;
-      gap: 10px;
+      gap: 8px;
     }
 
     .btn-round-nav {
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       background: #FFFFFF;
       border: 1px solid var(--border-subtle);
@@ -680,7 +780,7 @@
       justify-content: center;
       transition: var(--transition-fast);
       box-shadow: var(--shadow-sm);
-      font-size: 15px;
+      font-size: 14px;
     }
 
     .btn-round-nav:hover {
@@ -705,7 +805,7 @@
 
     .service-interactive-card {
       position: relative;
-      height: 360px;
+      height: 380px;
       border-radius: var(--radius-md);
       overflow: hidden;
       cursor: pointer;
@@ -757,7 +857,8 @@
     }
 
     .service-caption-title {
-      font-size: 19px;
+      font-family: var(--font-display);
+      font-size: 20px;
       font-weight: 800;
       color: #FFFFFF;
       line-height: 1.2;
@@ -787,7 +888,7 @@
     }
 
     /* ==========================================================================
-       SECTION 3: EXCELLENCE & TECHNOLOGY (ABOUT DENTAL)
+       SECTION 3: EXCELLENCE & TECHNOLOGY (ABOUT DENTAL - SEM BADGES DE IA)
        ========================================================================== */
     .section-about {
       padding: 90px 0;
@@ -796,7 +897,7 @@
 
     .about-two-columns {
       display: grid;
-      grid-template-columns: 1.05fr 1fr;
+      grid-template-columns: 1.1fr 1fr;
       gap: 56px;
       align-items: center;
     }
@@ -812,37 +913,13 @@
       position: relative;
     }
 
+    /* Foto Clínica Limpa e Realista (Sem Badges Flutuantes Artificiais de IA) */
     .about-main-image {
       width: 100%;
-      height: 460px;
+      height: 480px;
       object-fit: cover;
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-lg);
-    }
-
-    .about-floating-scanner-tag {
-      position: absolute;
-      bottom: -18px;
-      right: 20px;
-      background: #FFFFFF;
-      padding: 14px 20px;
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-md);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      border: 1px solid var(--border-subtle);
-    }
-
-    .scanner-icon-box {
-      width: 36px;
-      height: 36px;
-      background: var(--primary-teal-soft);
-      color: var(--primary-teal);
-      border-radius: var(--radius-xs);
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .about-details-col {
@@ -863,8 +940,9 @@
       align-items: center;
       gap: 8px;
       border: 1px solid var(--border-subtle);
-      padding: 9px 20px;
+      padding: 10px 22px;
       border-radius: var(--radius-pill);
+      font-family: var(--font-display);
       font-size: 13px;
       font-weight: 700;
       color: var(--text-main);
@@ -880,7 +958,7 @@
       border-color: #0F172A;
     }
 
-    /* Mini Doctor Cards */
+    /* Mini Especialistas (Layout Pinterest com Fotos Locais) */
     .about-mini-team-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -920,7 +998,8 @@
     }
 
     .about-mini-doc-name {
-      font-size: 14px;
+      font-family: var(--font-display);
+      font-size: 14.5px;
       font-weight: 800;
     }
 
@@ -964,6 +1043,7 @@
     }
 
     .stat-number-giant {
+      font-family: var(--font-display);
       font-size: clamp(38px, 4.2vw, 54px);
       font-weight: 800;
       color: var(--text-main);
@@ -972,6 +1052,7 @@
     }
 
     .stat-label-text {
+      font-family: var(--font-display);
       font-size: 11.5px;
       font-weight: 700;
       text-transform: uppercase;
@@ -980,7 +1061,7 @@
     }
 
     /* ==========================================================================
-       FOOTER & MAPA OFICIAL (Z=15)
+       FOOTER & MAPA OFICIAL Z=15
        ========================================================================== */
     .footer-section {
       background: #0B131C;
@@ -1004,6 +1085,7 @@
     }
 
     .footer-brand-heading {
+      font-family: var(--font-display);
       font-size: 20px;
       font-weight: 800;
       color: #FFFFFF;
@@ -1018,6 +1100,7 @@
 
     .footer-cro-badge {
       display: inline-block;
+      font-family: var(--font-display);
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.5px;
@@ -1028,6 +1111,7 @@
     }
 
     .footer-title-sub {
+      font-family: var(--font-display);
       font-size: 13.5px;
       font-weight: 800;
       text-transform: uppercase;
@@ -1112,6 +1196,7 @@
     }
 
     .booking-modal-heading {
+      font-family: var(--font-display);
       font-size: 18px;
       font-weight: 800;
       color: #FFFFFF;
@@ -1150,6 +1235,7 @@
     }
 
     .field-label {
+      font-family: var(--font-display);
       font-size: 12.5px;
       font-weight: 700;
       color: var(--text-main);
@@ -1160,7 +1246,7 @@
       padding: 11px 14px;
       border: 1px solid #CBD5E1;
       border-radius: var(--radius-xs);
-      font-family: var(--font-main);
+      font-family: var(--font-body);
       font-size: 14px;
       outline: none;
       transition: var(--transition-fast);
@@ -1176,6 +1262,7 @@
       color: #FFFFFF;
       padding: 14px;
       border-radius: var(--radius-xs);
+      font-family: var(--font-display);
       font-size: 14.5px;
       font-weight: 800;
       display: flex;
@@ -1280,7 +1367,7 @@
 
       <!-- 2. CORPO CENTRAL DO HERO -->
       <div class="hero-middle-body">
-        <!-- Esquerda: Headline Monumental em 3 Linhas (All-Caps Fiel ao Pinterest) -->
+        <!-- Esquerda: Headline Monumental em 3 Linhas (Outfit 800 All-Caps) -->
         <div class="hero-left-title-box">
           <h1 class="hero-main-title">
             ODONTOLOGIA<br>
@@ -1309,7 +1396,7 @@
           <!-- Doctor Floating Card Interativo -->
           <div class="hero-doctor-badge-card" id="doctor-card-box">
             <div class="doctor-thumb-box">
-              <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=300&q=80" alt="Dr. Jonas Suherman" class="doctor-thumb-img" id="doctor-img" />
+              <img src="doc-1.jpg" alt="Dr. Jonas Suherman" class="doctor-thumb-img" id="doctor-img" />
             </div>
             <div class="doctor-info-box">
               <h3 class="doctor-card-name" id="doctor-name">Dr. Jonas Suherman</h3>
@@ -1351,27 +1438,44 @@
       </div>
 
       <div class="services-main-row">
-        <!-- Lateral: Avaliações do Google + Controles do Carrossel -->
-        <div class="reviews-lateral-card" id="depoimentos">
-          <div class="reviews-avatar-row">
-            <div class="avatars-overlap">
-              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" class="avatar-face" alt="Paciente 1" />
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" class="avatar-face" alt="Paciente 2" />
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" class="avatar-face" alt="Paciente 3" />
+        <!-- Lateral: Card de Avaliações Assimétrico em 2 Blocos -->
+        <div class="asymmetric-reviews-card" id="depoimentos">
+          <!-- Bloco Superior: Selo & Métricas -->
+          <div class="reviews-metric-block">
+            <div class="metric-badge-header">
+              <span class="google-verified-tag">✓ Verificado no Google</span>
+              <span style="font-size: 11px; color: rgba(255,255,255,0.6);">Goiânia - GO</span>
             </div>
-            <div class="reviews-score-col">
-              <span class="score-big">850+</span>
-              <span class="score-label">Avaliações 5★</span>
+            <div class="metric-score-display">
+              <span class="metric-score-number">4.9</span>
+              <div class="metric-score-stars">★★★★★</div>
+            </div>
+            <div class="metric-avatars-cluster">
+              <div class="avatars-group">
+                <img src="doc-2.jpg" class="avatar-circle-img" alt="Paciente 1" />
+                <img src="doc-3.jpg" class="avatar-circle-img" alt="Paciente 2" />
+                <img src="doc-4.jpg" class="avatar-circle-img" alt="Paciente 3" />
+              </div>
+              <span class="avatars-count-text">+850 Pacientes Felizes</span>
             </div>
           </div>
 
-          <p class="reviews-quote-text" id="quote-text-el">
-            "Desde a primeira consulta com escaneamento 3D até a entrega das minhas lentes, o atendimento foi impecável. Zero dor, tecnologia de outro planeta e resultado ultra natural."
-          </p>
-
-          <div class="arrows-round-row">
-            <button class="btn-round-nav" onclick="cycleQuote(-1)" title="Depoimento Anterior">‹</button>
-            <button class="btn-round-nav" onclick="cycleQuote(1)" title="Próximo Depoimento">›</button>
+          <!-- Bloco Inferior: Citação Rotativa & Controles de Navegação -->
+          <div class="reviews-quote-block">
+            <div class="quote-icon-mark">“</div>
+            <p class="quote-statement" id="quote-text-el">
+              "Desde a primeira consulta com escaneamento 3D até a entrega das minhas lentes, o atendimento foi impecável. Zero dor, tecnologia de outro planeta e resultado ultra natural."
+            </p>
+            <div class="quote-author-row">
+              <div class="quote-author-info">
+                <span class="quote-author-name" id="quote-author-el">Mariana Siqueira</span>
+                <span class="quote-author-tag" id="quote-tag-el">Lentes de Contato em Porcelana</span>
+              </div>
+              <div class="arrows-round-row">
+                <button class="btn-round-nav" onclick="cycleQuote(-1)" title="Depoimento Anterior">‹</button>
+                <button class="btn-round-nav" onclick="cycleQuote(1)" title="Próximo Depoimento">›</button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1412,27 +1516,14 @@
   </section>
 
   <!-- ========================================================================
-       SECTION 3: ABOUT / EXCELLENCE & TECHNOLOGY
+       SECTION 3: ABOUT / EXCELLENCE & TECHNOLOGY (SEM BADGES DE IA)
        ======================================================================== -->
   <section class="section-about" id="about">
     <div class="container">
       <div class="about-two-columns">
-        <!-- Visual Column -->
+        <!-- Visual Column: Fotografia Clínica Limpa e Realista -->
         <div class="about-photo-wrapper">
-          <img src="about-technology.jpg" alt="Tecnologia Intraoral 3D Aura Dental" class="about-main-image" />
-          <div class="about-floating-scanner-tag">
-            <div class="scanner-icon-box">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                <rect x="2" y="3" width="20" height="14" rx="2"></rect>
-                <line x1="8" y1="21" x2="16" y2="21"></line>
-                <line x1="12" y1="17" x2="12" y2="21"></line>
-              </svg>
-            </div>
-            <div>
-              <strong style="font-size: 13px; color: #0F172A; display: block; font-weight: 800;">Scanner 3D Intraoral</strong>
-              <span style="font-size: 11px; color: #64748B;">Mapeamento digital em tempo real sem moldes</span>
-            </div>
-          </div>
+          <img src="about-technology.jpg" alt="Atendimento Odontológico de Alta Precisão Aura Dental" class="about-main-image" />
         </div>
 
         <!-- Details Column -->
@@ -1440,7 +1531,7 @@
           <span class="service-eyebrow">Sobre a Clínica / <span>Padrão Internacional</span></span>
           <h2 class="service-main-headline">EXCELÊNCIA EM ODONTOLOGIA COM CUIDADO GENTIL</h2>
           <p class="about-paragraph">
-            Na Aura Dental Clinic, integramos tecnologia tridimensional, escaneamento óptico de alta definição e biossegurança hospitalar com uma abordagem verdadeiramente humana. Eliminamos o desconforto de moldagens tradicionais com diagnósticos digitais instantâneos.
+            Na Aura Dental Clinic, integramos tecnologia tridimensional, escaneamento óptico de alta definição e biossegurança hospitalar com uma abordagem verdadeiramente humana. Eliminamos o desconforto de moldagens tradicionais com diagnósticos digitais instantâneos e tratamentos minimamente invasivos.
           </p>
 
           <button class="btn-read-more-tag" onclick="openBookingModal('Conhecer Estrutura')">
@@ -1448,10 +1539,10 @@
             <span>↗</span>
           </button>
 
-          <!-- Mini Especialistas (Layout Pinterest) -->
+          <!-- Mini Especialistas (Layout Pinterest com Fotos Locais) -->
           <div class="about-mini-team-grid" id="especialistas">
             <div class="about-mini-doc-card">
-              <img src="https://images.unsplash.com/photo-1594824813589-3221b6d07d9f?auto=format&fit=crop&w=400&q=80" class="about-mini-doc-img" alt="Dra. Camila Castro" />
+              <img src="doc-2.jpg" class="about-mini-doc-img" alt="Dra. Camila Castro" />
               <div class="about-mini-doc-overlay">
                 <span class="about-mini-doc-name">Dra. Camila Castro</span>
                 <span class="about-mini-doc-spec">Ortodontia Digital • Invisalign Top Doctor</span>
@@ -1459,7 +1550,7 @@
             </div>
 
             <div class="about-mini-doc-card">
-              <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=400&q=80" class="about-mini-doc-img" alt="Dr. Rafael Valente" />
+              <img src="doc-3.jpg" class="about-mini-doc-img" alt="Dr. Rafael Valente" />
               <div class="about-mini-doc-overlay">
                 <span class="about-mini-doc-name">Dr. Rafael Valente</span>
                 <span class="about-mini-doc-spec">Reabilitação Oral & Lentes de Porcelana</span>
@@ -1606,7 +1697,7 @@
        JAVASCRIPT: SLIDE ENGINE DINÂMICO & INTERATIVIDADE
        ======================================================================== -->
   <script>
-    // 5 Slides com Foto de Fundo, Doutor Correspondente e Descritivo
+    // 5 Slides com Fotos Locais (Sem Links Quebrados)
     const slidesData = [
       {
         pillText: 'Check-up Digital',
@@ -1615,7 +1706,7 @@
         doctorRole: 'Odontopediatria & Prevenção',
         doctorExp: '7 anos de experiência',
         doctorRating: '★ 4.9 (145)',
-        doctorImg: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=300&q=80'
+        doctorImg: 'doc-1.jpg'
       },
       {
         pillText: 'Clareamento a Laser',
@@ -1624,7 +1715,7 @@
         doctorRole: 'Estética Dental & Clareamento',
         doctorExp: '9 anos de experiência',
         doctorRating: '★ 5.0 (198)',
-        doctorImg: 'https://images.unsplash.com/photo-1594824813589-3221b6d07d9f?auto=format&fit=crop&w=300&q=80'
+        doctorImg: 'doc-2.jpg'
       },
       {
         pillText: 'Lentes de Contato',
@@ -1633,7 +1724,7 @@
         doctorRole: 'Reabilitação Oral & Prótese',
         doctorExp: '14 anos de experiência',
         doctorRating: '★ 4.9 (312)',
-        doctorImg: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=300&q=80'
+        doctorImg: 'doc-3.jpg'
       },
       {
         pillText: 'Alinhadores Invisíveis',
@@ -1642,7 +1733,7 @@
         doctorRole: 'Ortodontia Digital & Invisalign',
         doctorExp: '8 anos de experiência',
         doctorRating: '★ 4.9 (174)',
-        doctorImg: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=300&q=80'
+        doctorImg: 'doc-4.jpg'
       },
       {
         pillText: 'Implantes Guiados',
@@ -1651,7 +1742,7 @@
         doctorRole: 'Implantodontia & Cirurgia Guiada',
         doctorExp: '11 anos de experiência',
         doctorRating: '★ 5.0 (240)',
-        doctorImg: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=300&q=80'
+        doctorImg: 'doc-5.jpg'
       }
     ];
 
@@ -1714,22 +1805,48 @@
       activateSlide(currentSlide + delta);
     }
 
-    // Carrossel de Depoimentos Laterais
-    const quotesList = [
-      '"Desde a primeira consulta com escaneamento 3D até a entrega das minhas lentes, o atendimento foi impecável. Zero dor, tecnologia de outro planeta e resultado ultra natural."',
-      '"Fiz meu tratamento ortodôntico invisível na Aura Dental e o acompanhamento digital semanal fez toda a diferença. O conforto é inigualável."',
-      '"Tinha muito receio de colocar implante dentário. A cirurgia guiada por computador durou menos de 30 minutos e no dia seguinte já estava trabalhando sem dor."'
+    // Carrossel de Depoimentos Assimétrico
+    const reviewsList = [
+      {
+        quote: '"Desde a primeira consulta com escaneamento 3D até a entrega das minhas lentes, o atendimento foi impecável. Zero dor, tecnologia de outro planeta e resultado ultra natural."',
+        author: 'Mariana Siqueira',
+        tag: 'Lentes de Contato em Porcelana'
+      },
+      {
+        quote: '"Fiz meu tratamento ortodôntico invisível na Aura Dental e o acompanhamento digital semanal fez toda a diferença. O conforto é inigualável e ninguém percebia que eu estava usando."',
+        author: 'Rodrigo Mendonça',
+        tag: 'Alinhadores Invisíveis Invisalign'
+      },
+      {
+        quote: '"Tinha muito receio de colocar implante dentário. A cirurgia guiada por computador durou menos de 30 minutos e no dia seguinte já estava trabalhando sem dor."',
+        author: 'Beatriz Vasconcelos',
+        tag: 'Implante Dentário Guiado 3D'
+      }
     ];
+
     let quoteIndex = 0;
 
     function cycleQuote(delta) {
-      quoteIndex = (quoteIndex + delta + quotesList.length) % quotesList.length;
+      quoteIndex = (quoteIndex + delta + reviewsList.length) % reviewsList.length;
+      const item = reviewsList[quoteIndex];
+
       const quoteEl = document.getElementById('quote-text-el');
+      const authorEl = document.getElementById('quote-author-el');
+      const tagEl = document.getElementById('quote-tag-el');
+
       quoteEl.style.opacity = '0';
+      authorEl.style.opacity = '0';
+      tagEl.style.opacity = '0';
+
       setTimeout(() => {
-        quoteEl.textContent = quotesList[quoteIndex];
+        quoteEl.textContent = item.quote;
+        authorEl.textContent = item.author;
+        tagEl.textContent = item.tag;
+
         quoteEl.style.opacity = '1';
-      }, 200);
+        authorEl.style.opacity = '1';
+        tagEl.style.opacity = '1';
+      }, 180);
     }
 
     // Modal de Agendamento
