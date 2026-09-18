@@ -426,6 +426,7 @@ body.menu-open{ overflow: hidden !important; }
 .bento-item[data-demo*="case-estetica"] .site-preview-wrapper{ background-image:url('demos/case-estetica/hero.png'); background-size:cover; background-position:top center; filter:brightness(0.45) contrast(1.1); transition:filter .4s ease; }
 .bento-item[data-demo*="case-imobiliaria"] .site-preview-wrapper{ background-image:url('demos/case-imobiliaria/assets/images/hero.png'); background-size:cover; background-position:top center; filter:brightness(0.45) contrast(1.1); transition:filter .4s ease; }
 .bento-item[data-demo*="burger-hub"] .site-preview-wrapper{ background-image:url('demos/burger-hub/hero-key-visual.jpg'); background-size:cover; background-position:right center; filter:brightness(0.5) contrast(1.1); transition:filter .4s ease; }
+.bento-item[data-demo*="aura-dental"] .site-preview-wrapper{ background-image:url('demos/aura-dental/hero-dental.jpg'); background-size:cover; background-position:center; filter:brightness(0.5) contrast(1.1); transition:filter .4s ease; }
 .bento-item:hover .site-preview-wrapper{ filter:brightness(0.7) contrast(1.15); }
 .item-overlay{ position:absolute; inset:0; background: linear-gradient(180deg, transparent 20%, rgba(7,9,12,0.92) 100%); z-index:1; }
 .item-tag{ font-size:.72rem; font-weight:800; text-transform:uppercase; letter-spacing:.15em; color:#fff; opacity:.85; margin-bottom:6px; position:relative; z-index:2; padding:0 28px; }
