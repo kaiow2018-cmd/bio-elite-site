@@ -6,14 +6,16 @@
   <title>Aura Dental Clinic • Odontologia Moderna com Cuidado Gentil</title>
   <meta name="description" content="Odontologia de alta precisão para sorrisos saudáveis e confiantes em todas as idades — com conforto absoluto, tecnologia 3D e previsibilidade clínica." />
 
-  <!-- Google Fonts: Outfit (Exata da Referência do Pinterest) + Plus Jakarta Sans para leitura -->
+  <!-- Fontshare: General Sans (Exata Tipografia Neo-Grotesque da Referência) + Inter Fallback -->
+  <link rel="preconnect" href="https://api.fontshare.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700,800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <style>
     /* ==========================================================================
-       RESET & ROOT TOKENS (QUIET LUXURY DENTAL)
+       RESET & ROOT TOKENS (SWISS NEO-GROTESQUE DENTAL TYPOGRAPHY)
        ========================================================================== */
     *, *::before, *::after {
       box-sizing: border-box;
@@ -22,9 +24,9 @@
     }
 
     :root {
-      /* Tipografia Idêntica ao Benchmark Pinterest */
-      --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      /* Tipografia Idêntica ao Benchmark do Pinterest (General Sans / Inter) */
+      --font-display: 'General Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-body: 'General Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
       --bg-page: #EDF1F5;
       --bg-card: #FFFFFF;
@@ -201,11 +203,11 @@
       gap: 20px;
     }
 
-    /* Logo Mais Interessante & Aristocrático */
+    /* Logo Minimalista Fiel ao Pinterest ("Dental" / "Aura Dental") */
     .hero-brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       color: #FFFFFF;
       transition: var(--transition-fast);
     }
@@ -215,33 +217,19 @@
     }
 
     .brand-emblem-svg {
-      width: 34px;
-      height: 34px;
+      width: 28px;
+      height: 28px;
       flex-shrink: 0;
-      filter: drop-shadow(0 2px 10px rgba(13, 148, 136, 0.45));
-    }
-
-    .brand-title-group {
-      display: flex;
-      flex-direction: column;
+      color: #FFFFFF;
     }
 
     .brand-title-main {
       font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      line-height: 1.1;
-      color: #FFFFFF;
-    }
-
-    .brand-title-tag {
-      font-family: var(--font-display);
-      font-size: 9.5px;
+      font-size: 21px;
       font-weight: 700;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.65);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: #FFFFFF;
     }
 
     /* Menu Central em Cápsula de Vidro Fosco */
@@ -267,7 +255,7 @@
     .hero-nav-link {
       font-family: var(--font-display);
       font-size: 13.5px;
-      font-weight: 600;
+      font-weight: 500;
       color: rgba(255, 255, 255, 0.88);
       transition: var(--transition-fast);
     }
@@ -286,7 +274,7 @@
       color: #0F172A;
       font-family: var(--font-display);
       font-size: 12.5px;
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: 0.6px;
       text-transform: uppercase;
       padding: 7px 8px 7px 20px;
@@ -339,16 +327,15 @@
       }
     }
 
-    /* Tipografia Fiel ao Pinterest (Outfit 800 All-Caps Monumental) */
+    /* Tipografia Fiel ao Pinterest (General Sans 800 All-Caps Monumental) */
     .hero-main-title {
       font-family: var(--font-display);
-      font-size: clamp(34px, 5.2vw, 66px);
+      font-size: clamp(38px, 5.6vw, 70px);
       font-weight: 800;
-      line-height: 1.02;
-      letter-spacing: -0.025em;
+      line-height: 1.04;
+      letter-spacing: -0.035em;
       color: #FFFFFF;
       text-transform: uppercase;
-      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
 
     .hero-right-meta {
@@ -573,27 +560,30 @@
 
     .service-eyebrow {
       font-family: var(--font-display);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      color: #64748B;
+      margin-bottom: 6px;
       display: block;
-    }
-
-    .service-eyebrow span {
-      color: var(--primary-teal);
     }
 
     .service-main-headline {
       font-family: var(--font-display);
-      font-size: clamp(26px, 3.8vw, 44px);
-      font-weight: 800;
+      font-size: clamp(28px, 3.8vw, 44px);
       line-height: 1.12;
-      letter-spacing: -0.02em;
-      color: var(--text-main);
+      letter-spacing: -0.03em;
       text-transform: uppercase;
+    }
+
+    .service-main-headline .bold-text {
+      font-weight: 800;
+      color: #0F172A;
+    }
+
+    .service-main-headline .light-text {
+      font-weight: 400;
+      color: #475569;
     }
 
     .service-lead-paragraph {
@@ -1325,22 +1315,19 @@
 
       <!-- 1. NAVBAR DENTRO DO HERO NO TOPO -->
       <header class="hero-navbar-inner">
-        <!-- Logo Elevado com Emblema Geométrico Nobre -->
+        <!-- Logo Fiel ao Pinterest (Ícone 8 Pétalas + Aura Dental) -->
         <a href="#hero-frame" class="hero-brand">
-          <svg class="brand-emblem-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="18" cy="18" r="4.5" fill="#FFFFFF"/>
-            <path d="M18 2C18 2 20.5 9 24 12C27.5 15 34 18 34 18C34 18 27.5 21 24 24C20.5 27 18 34 18 34C18 34 15.5 27 12 24C8.5 21 2 18 2 18C2 18 8.5 15 12 12C15.5 9 18 2 18 2Z" fill="url(#brandGrad)" fill-opacity="0.95"/>
-            <defs>
-              <linearGradient id="brandGrad" x1="2" y1="2" x2="34" y2="34" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#FFFFFF"/>
-                <stop offset="1" stop-color="#5EEAD4"/>
-              </linearGradient>
-            </defs>
+          <svg class="brand-emblem-svg" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="4" r="2.2" />
+            <circle cx="12" cy="20" r="2.2" />
+            <circle cx="4" cy="12" r="2.2" />
+            <circle cx="20" cy="12" r="2.2" />
+            <circle cx="6.34" cy="6.34" r="2.2" />
+            <circle cx="17.66" cy="17.66" r="2.2" />
+            <circle cx="6.34" cy="17.66" r="2.2" />
+            <circle cx="17.66" cy="6.34" r="2.2" />
           </svg>
-          <div class="brand-title-group">
-            <span class="brand-title-main">AURA DENTAL</span>
-            <span class="brand-title-tag">ODONTOLOGIA MODERNA</span>
-          </div>
+          <span class="brand-title-main">Aura Dental</span>
         </a>
 
         <!-- Menu Flutuante Central -->
@@ -1429,8 +1416,11 @@
     <div class="container">
       <div class="services-header-split">
         <div>
-          <span class="service-eyebrow">Tratamentos de Assinatura / <span>Excelência</span></span>
-          <h2 class="service-main-headline">DESCUBRA NOSSOS SERVIÇOS EXCLUSIVOS</h2>
+          <span class="service-eyebrow">Nossos Tratamentos /</span>
+          <h2 class="service-main-headline">
+            <span class="bold-text">DESCUBRA NOSSOS SERVIÇOS</span><br>
+            <span class="light-text">DE ASSINATURA</span>
+          </h2>
         </div>
         <p class="service-lead-paragraph">
           Experimente o cuidado odontológico moderno entregue com atenção refinada aos mínimos detalhes. Nossa clínica proporciona uma atmosfera serena e acolhedora, planejada para consultas 100% livres de desconforto ou ansiedade.
@@ -1528,8 +1518,11 @@
 
         <!-- Details Column -->
         <div class="about-details-col">
-          <span class="service-eyebrow">Sobre a Clínica / <span>Padrão Internacional</span></span>
-          <h2 class="service-main-headline">EXCELÊNCIA EM ODONTOLOGIA COM CUIDADO GENTIL</h2>
+          <span class="service-eyebrow">Sobre a Clínica /</span>
+          <h2 class="service-main-headline">
+            <span class="bold-text">EXCELÊNCIA EM ODONTOLOGIA</span><br>
+            <span class="light-text">COM CUIDADO GENTIL</span>
+          </h2>
           <p class="about-paragraph">
             Na Aura Dental Clinic, integramos tecnologia tridimensional, escaneamento óptico de alta definição e biossegurança hospitalar com uma abordagem verdadeiramente humana. Eliminamos o desconforto de moldagens tradicionais com diagnósticos digitais instantâneos e tratamentos minimamente invasivos.
           </p>
@@ -1570,19 +1563,19 @@
       <div class="stats-four-boxes">
         <div class="stat-metric-box">
           <span class="stat-number-giant">98%</span>
-          <span class="stat-label-text">Índice de Satisfação dos Pacientes</span>
+          <span class="stat-label-text">Taxa de Satisfação</span>
         </div>
         <div class="stat-metric-box">
-          <span class="stat-number-giant">15K+</span>
-          <span class="stat-label-text">Sorrisos Reabilitados com Sucesso</span>
+          <span class="stat-number-giant">50K</span>
+          <span class="stat-label-text">Sorrisos Transformados</span>
         </div>
         <div class="stat-metric-box">
-          <span class="stat-number-giant">4.9★</span>
-          <span class="stat-label-text">Nota Média no Google (850+ Avaliações)</span>
+          <span class="stat-number-giant">4.9</span>
+          <span class="stat-label-text">Avaliação dos Pacientes</span>
         </div>
         <div class="stat-metric-box">
           <span class="stat-number-giant">100%</span>
-          <span class="stat-label-text">Planejamento 3D Pré-Aprovado</span>
+          <span class="stat-label-text">Precisão & Conforto 3D</span>
         </div>
       </div>
     </div>
