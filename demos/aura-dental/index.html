@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aura Dental Clinic • Odontologia Moderna com Cuidado Humanizado</title>
-  <meta name="description" content="Tratamentos odontológicos de alta precisão para sorrisos saudáveis e confiantes. Tecnologia 3D, lentes de contato, Invisalign e atendimento humanizado." />
+  <title>Aura Dental Clinic • Odontologia Moderna com Cuidado Gentil</title>
+  <meta name="description" content="Odontologia de alta precisão para sorrisos saudáveis e confiantes em todas as idades — com conforto absoluto, tecnologia 3D e previsibilidade clínica." />
 
-  <!-- Google Fonts: Outfit + Plus Jakarta Sans -->
+  <!-- Google Fonts: Plus Jakarta Sans (Monumental Geometric Bold) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&display=swap" rel="stylesheet" />
 
   <style>
     /* ==========================================================================
-       RESET & ROOT TOKENS (QUIET LUXURY DENTAL PALETTE)
+       RESET & ROOT TOKENS (QUIET LUXURY CLINICAL DENTAL)
        ========================================================================== */
     *, *::before, *::after {
       box-sizing: border-box;
@@ -22,37 +22,36 @@
     }
 
     :root {
-      --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-      --bg-page: #F7FAFC;
+      --bg-page: #EDF1F5;
       --bg-card: #FFFFFF;
-      --bg-card-dark: #0B141E;
+      --bg-card-dark: #0B131C;
       --text-main: #0F172A;
-      --text-muted: #64748B;
-      --text-subtle: #94A3B8;
+      --text-muted: #526071;
+      --text-subtle: #8A99AD;
       --text-light: #F8FAFC;
 
       --primary-teal: #0D9488;
       --primary-teal-hover: #0F766E;
-      --primary-teal-soft: rgba(13, 148, 136, 0.10);
-      
-      --accent-gold: #D97706;
+      --primary-teal-soft: rgba(13, 148, 136, 0.08);
+
       --border-subtle: rgba(15, 23, 42, 0.08);
-      --border-light: rgba(255, 255, 255, 0.15);
+      --border-light: rgba(255, 255, 255, 0.20);
 
+      /* Menos Redondo: Radii refinados e sóbrios */
+      --radius-xs: 6px;
       --radius-sm: 10px;
-      --radius-md: 16px;
-      --radius-lg: 24px;
-      --radius-xl: 32px;
-      --radius-full: 9999px;
+      --radius-md: 14px;
+      --radius-lg: 18px;
+      --radius-pill: 9999px;
 
-      --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.04);
-      --shadow-md: 0 12px 32px rgba(15, 23, 42, 0.08);
-      --shadow-xl: 0 24px 60px rgba(15, 23, 42, 0.12);
+      --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 12px 28px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 20px 48px rgba(15, 23, 42, 0.16);
 
       --transition-fast: 0.2s ease;
-      --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     html {
@@ -61,7 +60,7 @@
     }
 
     body {
-      font-family: var(--font-body);
+      font-family: var(--font-main);
       background-color: var(--bg-page);
       color: var(--text-main);
       line-height: 1.6;
@@ -69,7 +68,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Container Ultra-Wide Constitucional */
     .container {
       width: 100%;
       max-width: 1240px;
@@ -99,481 +97,537 @@
     }
 
     /* ==========================================================================
-       TOPBAR & HEADER
+       HERO CANVAS SECTION (INTEIRIÇO COM NAVBAR INTERNA E SLIDE DINÂMICO)
        ========================================================================== */
-    .header-nav-wrap {
-      position: absolute;
-      top: 0;
-      left: 0;
+    .hero-outer-wrapper {
+      padding: 18px 20px 0;
       width: 100%;
-      z-index: 100;
-      padding: 24px 0;
+      max-width: 1380px;
+      margin: 0 auto;
     }
 
-    .header-content {
+    @media (max-width: 768px) {
+      .hero-outer-wrapper {
+        padding: 10px 12px 0;
+      }
+    }
+
+    .hero-canvas {
+      position: relative;
+      width: 100%;
+      min-height: 88vh;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px 40px 36px;
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: #0B131C;
+    }
+
+    @media (max-width: 900px) {
+      .hero-canvas {
+        padding: 20px 24px 28px;
+        min-height: 92vh;
+      }
+    }
+
+    /* Slides de Fundo com Transição Suave */
+    .hero-slides-track {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero-slide-layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center right;
+      opacity: 0;
+      transform: scale(1.03);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hero-slide-layer.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Overlay de Contraste Fiel à Referência (Escurece para leitura sem tampar a foto) */
+    .hero-gradient-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(11, 19, 28, 0.88) 0%,
+        rgba(11, 19, 28, 0.72) 42%,
+        rgba(11, 19, 28, 0.20) 75%,
+        rgba(11, 19, 28, 0.35) 100%
+      );
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @media (max-width: 900px) {
+      .hero-gradient-overlay {
+        background: linear-gradient(
+          to bottom,
+          rgba(11, 19, 28, 0.85) 0%,
+          rgba(11, 19, 28, 0.65) 50%,
+          rgba(11, 19, 28, 0.92) 100%
+        );
+      }
+    }
+
+    /* ==========================================================================
+       NAVBAR INTEGRADA EM CIMA DO HERO
+       ========================================================================== */
+    .hero-navbar-inner {
+      position: relative;
+      z-index: 10;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
     }
 
-    .brand-logo {
+    /* Logo Mais Interessante & Nobre */
+    .hero-brand {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-family: var(--font-display);
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
+      gap: 12px;
       color: #FFFFFF;
       transition: var(--transition-fast);
     }
 
-    .brand-icon-sparkle {
-      width: 28px;
-      height: 28px;
+    .hero-brand:hover {
+      opacity: 0.92;
+    }
+
+    .brand-emblem-svg {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      filter: drop-shadow(0 2px 8px rgba(13, 148, 136, 0.4));
+    }
+
+    .brand-title-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title-main {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
       color: #FFFFFF;
     }
 
-    .nav-pill-menu {
-      display: none;
-      align-items: center;
-      gap: 24px;
-      background: rgba(15, 23, 42, 0.45);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      padding: 10px 24px;
-      border-radius: var(--radius-full);
+    .brand-title-tag {
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.65);
     }
 
-    @media (min-width: 900px) {
-      .nav-pill-menu {
+    /* Menu Central em Cápsula de Vidro Fosco */
+    .hero-nav-pill {
+      display: none;
+      align-items: center;
+      gap: 26px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      padding: 8px 26px;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    @media (min-width: 960px) {
+      .hero-nav-pill {
         display: flex;
       }
     }
 
-    .nav-link {
+    .hero-nav-link {
       font-size: 13px;
-      font-weight: 500;
+      font-weight: 600;
       color: rgba(255, 255, 255, 0.85);
       transition: var(--transition-fast);
-      position: relative;
     }
 
-    .nav-link:hover {
+    .hero-nav-link:hover {
       color: #FFFFFF;
+      transform: translateY(-1px);
     }
 
-    .btn-header-cta {
+    /* Botão CTA da Navbar "BOOK A CALL ->" */
+    .hero-nav-cta {
       display: inline-flex;
       align-items: center;
       gap: 12px;
       background: #FFFFFF;
       color: #0F172A;
-      font-family: var(--font-display);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      padding: 8px 18px 8px 24px;
-      border-radius: var(--radius-full);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      font-size: 12.5px;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      padding: 7px 8px 7px 20px;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
       transition: var(--transition-smooth);
     }
 
-    .btn-header-cta:hover {
+    .hero-nav-cta:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.32);
+      background: #F8FAFC;
     }
 
-    .btn-arrow-circle {
+    .cta-arrow-circle {
       width: 32px;
       height: 32px;
+      border-radius: 50%;
       background: #0F172A;
       color: #FFFFFF;
-      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       transition: var(--transition-fast);
     }
 
-    .btn-header-cta:hover .btn-arrow-circle {
-      transform: translateX(3px);
+    .hero-nav-cta:hover .cta-arrow-circle {
       background: var(--primary-teal);
+      transform: translateX(3px);
     }
 
     /* ==========================================================================
-       HERO CINEMATIC SECTION (PINTEST INSPIRATION)
+       CORPO CENTRAL DO HERO (HEADLINE + PARÁGRAFO + SLIDER ESPECIALISTA)
        ========================================================================== */
-    .hero-section {
+    .hero-middle-body {
       position: relative;
-      padding: 140px 0 60px;
-      background: #0B131C;
-    }
-
-    .hero-card-canvas {
-      position: relative;
-      width: 100%;
-      min-height: 640px;
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      background: #0E1A26 url('hero-dental.jpg') no-repeat center right / cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 56px 48px 40px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    @media (max-width: 768px) {
-      .hero-card-canvas {
-        padding: 32px 24px;
-        min-height: 720px;
-        background-position: 70% center;
-      }
-    }
-
-    /* Overlay gradiente suave para leitura perfeita */
-    .hero-vignette-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to right,
-        rgba(10, 18, 26, 0.92) 0%,
-        rgba(10, 18, 26, 0.75) 45%,
-        rgba(10, 18, 26, 0.25) 80%,
-        rgba(10, 18, 26, 0.40) 100%
-      );
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    @media (max-width: 768px) {
-      .hero-vignette-overlay {
-        background: linear-gradient(
-          to bottom,
-          rgba(10, 18, 26, 0.88) 0%,
-          rgba(10, 18, 26, 0.65) 50%,
-          rgba(10, 18, 26, 0.94) 100%
-        );
-      }
-    }
-
-    .hero-content-top {
-      position: relative;
-      z-index: 2;
+      z-index: 5;
       display: grid;
-      grid-template-columns: 1.4fr 1fr;
+      grid-template-columns: 1.25fr 1fr;
       gap: 40px;
-      align-items: start;
+      align-items: center;
+      margin: 40px 0 30px;
     }
 
-    @media (max-width: 992px) {
-      .hero-content-top {
+    @media (max-width: 960px) {
+      .hero-middle-body {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 24px;
+        margin: 30px 0 24px;
       }
     }
 
-    .hero-headline {
-      font-family: var(--font-display);
-      font-size: clamp(34px, 5.5vw, 68px);
+    /* Tipografia Fiel à Referência: All-Caps Monumental Geometric Bold */
+    .hero-main-title {
+      font-size: clamp(34px, 5.2vw, 64px);
       font-weight: 800;
-      line-height: 1.05;
-      letter-spacing: -1.5px;
+      line-height: 1.02;
+      letter-spacing: -0.03em;
       color: #FFFFFF;
       text-transform: uppercase;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
 
-    .hero-subhead {
-      font-size: clamp(14px, 1.2vw, 17px);
-      color: rgba(255, 255, 255, 0.85);
-      line-height: 1.6;
-      max-width: 440px;
-      margin-left: auto;
-      padding-top: 12px;
+    .hero-right-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 20px;
     }
 
-    @media (max-width: 992px) {
-      .hero-subhead {
-        margin-left: 0;
-        padding-top: 0;
+    @media (max-width: 960px) {
+      .hero-right-meta {
+        align-items: flex-start;
       }
     }
 
-    /* Rodapé do Hero: Pills à esquerda + Slider do Especialista à direita */
-    .hero-content-bottom {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 32px;
-      margin-top: 60px;
-      flex-wrap: wrap;
+    .hero-lead-text {
+      font-size: clamp(14px, 1.15vw, 16px);
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.65;
+      max-width: 440px;
+      text-align: right;
+      transition: opacity 0.3s ease;
     }
 
-    /* Floating Category Pills (Inspiração Pinterest) */
-    .hero-pills-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      max-width: 520px;
+    @media (max-width: 960px) {
+      .hero-lead-text {
+        text-align: left;
+        max-width: 100%;
+      }
     }
 
-    .hero-pill {
-      font-family: var(--font-display);
-      font-size: 13px;
-      font-weight: 600;
-      padding: 10px 18px;
-      border-radius: var(--radius-full);
-      background: rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.20);
-      color: #FFFFFF;
-      transition: var(--transition-smooth);
-    }
-
-    .hero-pill:hover,
-    .hero-pill.active {
-      background: #FFFFFF;
-      color: #0B131C;
-      border-color: #FFFFFF;
-      box-shadow: 0 4px 16px rgba(255, 255, 255, 0.25);
-      transform: translateY(-2px);
-    }
-
-    /* Doctor Profile Floating Card com Slider */
-    .doctor-slider-card {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-radius: var(--radius-lg);
-      padding: 18px 22px;
-      width: 100%;
-      max-width: 360px;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      transition: var(--transition-smooth);
-    }
-
-    .doctor-slider-nav {
+    /* Controles do Slider: < 01 ─── 05 > */
+    .hero-slider-indicator-bar {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-      padding-bottom: 10px;
-    }
-
-    .slider-counter {
-      font-family: var(--font-display);
+      gap: 12px;
+      color: rgba(255, 255, 255, 0.75);
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 1px;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 10px;
     }
 
-    .slider-progress-track {
-      width: 100px;
-      height: 3px;
-      background: #E2E8F0;
-      border-radius: 2px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .slider-progress-bar {
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 25%;
-      background: #0F172A;
-      transition: width 0.35s ease;
-    }
-
-    .slider-nav-btns {
-      display: flex;
-      gap: 6px;
-    }
-
-    .btn-slide-nav {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: #F1F5F9;
-      color: #0F172A;
+    .btn-hero-arrow {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 18px;
+      width: 24px;
+      height: 24px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 11px;
       transition: var(--transition-fast);
+      line-height: 1;
     }
 
-    .btn-slide-nav:hover {
-      background: #0F172A;
+    .btn-hero-arrow:hover {
       color: #FFFFFF;
+      transform: scale(1.15);
     }
 
-    .doctor-profile-info {
+    .slider-track-line {
+      width: 90px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.25);
+      position: relative;
+      overflow: hidden;
+      border-radius: 1px;
+    }
+
+    .slider-fill-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 20%;
+      background: #FFFFFF;
+      transition: width 0.4s ease;
+    }
+
+    /* Card de Especialista (Menos Redondo: 14px) */
+    .hero-doctor-badge-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: var(--radius-md);
+      padding: 12px 18px;
       display: flex;
       align-items: center;
       gap: 14px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      width: 100%;
+      max-width: 360px;
+      transition: transform 0.3s ease;
     }
 
-    .doctor-avatar-wrap {
-      width: 58px;
-      height: 58px;
-      border-radius: var(--radius-md);
+    .hero-doctor-badge-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .doctor-thumb-box {
+      width: 54px;
+      height: 54px;
+      border-radius: var(--radius-sm);
       overflow: hidden;
       flex-shrink: 0;
       border: 2px solid #FFFFFF;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
     }
 
-    .doctor-avatar-img {
+    .doctor-thumb-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s ease;
+      transition: opacity 0.3s ease;
     }
 
-    .doctor-meta-col {
+    .doctor-info-box {
       display: flex;
       flex-direction: column;
     }
 
-    .doctor-name {
-      font-family: var(--font-display);
-      font-size: 16px;
-      font-weight: 700;
+    .doctor-card-name {
+      font-size: 15px;
+      font-weight: 800;
       color: var(--text-main);
+      line-height: 1.2;
     }
 
-    .doctor-spec {
+    .doctor-card-role {
       font-size: 12px;
       color: var(--text-muted);
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
-    .doctor-badge-row {
+    .doctor-card-rating {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary-teal);
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--primary-teal);
+      gap: 6px;
     }
 
-    .doctor-rating-pill {
+    .rating-star-badge {
       background: #FEF3C7;
-      color: #B45309;
-      padding: 2px 7px;
-      border-radius: var(--radius-full);
+      color: #92400E;
+      padding: 1px 6px;
+      border-radius: var(--radius-xs);
       font-size: 10px;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 3px;
+      font-weight: 800;
     }
 
     /* ==========================================================================
-       SECTION 2: SIGNATURE DENTAL SERVICES (PINTEREST LAYOUT)
+       RODAPÉ DO HERO: BOTÕES DE SLIDE / CATEGORIAS (MUDAM O FUNDO)
        ========================================================================== */
-    .section-services {
-      padding: 100px 0;
-      background: #FFFFFF;
+    .hero-bottom-controls {
+      position: relative;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-top: 10px;
     }
 
-    .services-header-grid {
+    .hero-slide-btn {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      padding: 9px 18px;
+      border-radius: var(--radius-pill);
+      transition: var(--transition-smooth);
+    }
+
+    .hero-slide-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+
+    .hero-slide-btn.active {
+      background: #FFFFFF;
+      color: #0B131C;
+      border-color: #FFFFFF;
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+      font-weight: 700;
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       SECTION 2: SIGNATURE DENTAL SERVICES (LAYOUT DO PINTEREST)
+       ========================================================================== */
+    .section-services {
+      padding: 90px 0 80px;
+      background: #FFFFFF;
+      margin-top: 24px;
+      border-radius: var(--radius-lg);
+    }
+
+    .services-header-split {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: 48px;
       align-items: end;
-      margin-bottom: 56px;
+      margin-bottom: 50px;
     }
 
     @media (max-width: 850px) {
-      .services-header-grid {
+      .services-header-split {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 18px;
+        margin-bottom: 36px;
       }
     }
 
-    .section-eyebrow {
-      font-family: var(--font-display);
+    .service-eyebrow {
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--primary-teal);
-      margin-bottom: 10px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
       display: block;
     }
 
-    .section-headline {
-      font-family: var(--font-display);
-      font-size: clamp(28px, 4vw, 46px);
+    .service-eyebrow span {
+      color: var(--primary-teal);
+    }
+
+    .service-main-headline {
+      font-size: clamp(26px, 3.8vw, 44px);
       font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -1px;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
       color: var(--text-main);
       text-transform: uppercase;
     }
 
-    .section-desc {
+    .service-lead-paragraph {
       font-size: 15px;
       color: var(--text-muted);
       line-height: 1.65;
     }
 
-    /* Grid com Coluna Esquerda de Depoimentos + 3 Cards de Serviços */
-    .services-showcase-grid {
+    /* Grid com Social Proof Lateral + 3 Cards Fotográficos */
+    .services-main-row {
       display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 32px;
+      grid-template-columns: 290px 1fr;
+      gap: 28px;
       align-items: stretch;
     }
 
-    @media (max-width: 1024px) {
-      .services-showcase-grid {
+    @media (max-width: 1040px) {
+      .services-main-row {
         grid-template-columns: 1fr;
       }
     }
 
-    /* Social Proof Card Lateral */
-    .social-proof-lateral {
+    /* Card Lateral de Avaliações */
+    .reviews-lateral-card {
       background: #F8FAFC;
       border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-xl);
-      padding: 36px 28px;
+      border-radius: var(--radius-md);
+      padding: 32px 24px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       gap: 24px;
     }
 
-    .reviews-badge-row {
+    .reviews-avatar-row {
       display: flex;
       align-items: center;
       gap: 14px;
     }
 
-    .avatar-cluster {
+    .avatars-overlap {
       display: flex;
       margin-left: 6px;
     }
 
-    .cluster-img {
+    .avatar-face {
       width: 38px;
       height: 38px;
       border-radius: 50%;
@@ -582,41 +636,41 @@
       object-fit: cover;
     }
 
-    .reviews-count-box {
+    .reviews-score-col {
       display: flex;
       flex-direction: column;
     }
 
-    .reviews-big-num {
-      font-family: var(--font-display);
-      font-size: 20px;
+    .score-big {
+      font-size: 22px;
       font-weight: 800;
       color: var(--text-main);
       line-height: 1;
     }
 
-    .reviews-sublabel {
+    .score-label {
       font-size: 11px;
       color: var(--text-muted);
+      font-weight: 700;
       text-transform: uppercase;
-      font-weight: 600;
       letter-spacing: 0.5px;
     }
 
-    .social-proof-quote {
+    .reviews-quote-text {
       font-size: 14px;
       color: var(--text-muted);
       line-height: 1.6;
+      transition: opacity 0.25s ease;
     }
 
-    .carousel-arrows-row {
+    .arrows-round-row {
       display: flex;
       gap: 10px;
     }
 
-    .btn-circle-arrow {
-      width: 44px;
-      height: 44px;
+    .btn-round-nav {
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background: #FFFFFF;
       border: 1px solid var(--border-subtle);
@@ -626,44 +680,45 @@
       justify-content: center;
       transition: var(--transition-fast);
       box-shadow: var(--shadow-sm);
+      font-size: 15px;
     }
 
-    .btn-circle-arrow:hover {
+    .btn-round-nav:hover {
       background: #0F172A;
       color: #FFFFFF;
       border-color: #0F172A;
       transform: scale(1.05);
     }
 
-    /* Cards de Serviços Fotográficos com Canto Lapidado */
-    .services-cards-track {
+    /* 3 Cards de Serviços (Menos Redondo: 14px) */
+    .services-cards-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 22px;
     }
 
     @media (max-width: 768px) {
-      .services-cards-track {
+      .services-cards-grid {
         grid-template-columns: 1fr;
       }
     }
 
-    .service-card-item {
+    .service-interactive-card {
       position: relative;
-      height: 380px;
-      border-radius: var(--radius-xl);
+      height: 360px;
+      border-radius: var(--radius-md);
       overflow: hidden;
       cursor: pointer;
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-sm);
       transition: var(--transition-smooth);
     }
 
-    .service-card-item:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-xl);
+    .service-interactive-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
     }
 
-    .service-bg-img {
+    .service-card-photo {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -672,28 +727,28 @@
       transition: transform 0.6s ease;
     }
 
-    .service-card-item:hover .service-bg-img {
-      transform: scale(1.06);
+    .service-interactive-card:hover .service-card-photo {
+      transform: scale(1.05);
     }
 
-    .service-card-overlay {
+    .service-photo-shade {
       position: absolute;
       inset: 0;
       background: linear-gradient(
         to bottom,
-        rgba(15, 23, 42, 0.1) 0%,
-        rgba(15, 23, 42, 0.4) 50%,
+        rgba(15, 23, 42, 0.05) 0%,
+        rgba(15, 23, 42, 0.40) 55%,
         rgba(15, 23, 42, 0.92) 100%
       );
       z-index: 1;
     }
 
-    .service-card-footer {
+    .service-card-caption {
       position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
-      padding: 24px;
+      padding: 22px;
       z-index: 2;
       display: flex;
       align-items: center;
@@ -701,17 +756,16 @@
       gap: 12px;
     }
 
-    .service-card-title {
-      font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: 700;
+    .service-caption-title {
+      font-size: 19px;
+      font-weight: 800;
       color: #FFFFFF;
       line-height: 1.2;
     }
 
-    .service-arrow-btn {
-      width: 38px;
-      height: 38px;
+    .service-btn-arrow-pill {
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.25);
       backdrop-filter: blur(8px);
@@ -722,57 +776,57 @@
       justify-content: center;
       flex-shrink: 0;
       transition: var(--transition-fast);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      font-size: 14px;
     }
 
-    .service-card-item:hover .service-arrow-btn {
+    .service-interactive-card:hover .service-btn-arrow-pill {
       background: #FFFFFF;
       color: #0F172A;
       transform: translateX(4px);
     }
 
     /* ==========================================================================
-       SECTION 3: ABOUT / EXCELLENCE & TECHNOLOGY
+       SECTION 3: EXCELLENCE & TECHNOLOGY (ABOUT DENTAL)
        ========================================================================== */
     .section-about {
-      padding: 100px 0;
-      background: #F8FAFC;
-      border-top: 1px solid var(--border-subtle);
+      padding: 90px 0;
+      background: #EDF1F5;
     }
 
-    .about-split-grid {
+    .about-two-columns {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 56px;
       align-items: center;
     }
 
-    @media (max-width: 992px) {
-      .about-split-grid {
+    @media (max-width: 960px) {
+      .about-two-columns {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 36px;
       }
     }
 
-    .about-visual-col {
+    .about-photo-wrapper {
       position: relative;
     }
 
-    .about-cinematic-img {
+    .about-main-image {
       width: 100%;
-      height: 480px;
+      height: 460px;
       object-fit: cover;
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow-xl);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
     }
 
-    .about-floating-badge {
+    .about-floating-scanner-tag {
       position: absolute;
-      bottom: -20px;
-      right: 24px;
+      bottom: -18px;
+      right: 20px;
       background: #FFFFFF;
-      padding: 16px 22px;
-      border-radius: var(--radius-lg);
+      padding: 14px 20px;
+      border-radius: var(--radius-md);
       box-shadow: var(--shadow-md);
       display: flex;
       align-items: center;
@@ -780,84 +834,84 @@
       border: 1px solid var(--border-subtle);
     }
 
-    .badge-icon-scanner {
+    .scanner-icon-box {
       width: 36px;
       height: 36px;
       background: var(--primary-teal-soft);
       color: var(--primary-teal);
-      border-radius: 10px;
+      border-radius: var(--radius-xs);
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .about-info-col {
+    .about-details-col {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 18px;
     }
 
-    .about-lead-desc {
-      font-size: 16px;
+    .about-paragraph {
+      font-size: 15.5px;
       color: var(--text-muted);
       line-height: 1.7;
     }
 
-    .btn-read-more {
+    .btn-read-more-tag {
       align-self: flex-start;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       border: 1px solid var(--border-subtle);
-      padding: 10px 22px;
-      border-radius: var(--radius-full);
+      padding: 9px 20px;
+      border-radius: var(--radius-pill);
       font-size: 13px;
       font-weight: 700;
       color: var(--text-main);
       background: #FFFFFF;
       box-shadow: var(--shadow-sm);
       transition: var(--transition-fast);
-      margin-top: 10px;
+      margin-top: 6px;
     }
 
-    .btn-read-more:hover {
+    .btn-read-more-tag:hover {
       background: #0F172A;
       color: #FFFFFF;
       border-color: #0F172A;
     }
 
-    /* Mini Doctor Team Cards */
-    .mini-team-row {
+    /* Mini Doctor Cards */
+    .about-mini-team-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 24px;
+      gap: 14px;
+      margin-top: 20px;
     }
 
     @media (max-width: 600px) {
-      .mini-team-row {
+      .about-mini-team-grid {
         grid-template-columns: 1fr;
       }
     }
 
-    .mini-team-card {
+    .about-mini-doc-card {
       position: relative;
-      height: 160px;
-      border-radius: var(--radius-lg);
+      height: 150px;
+      border-radius: var(--radius-md);
       overflow: hidden;
       box-shadow: var(--shadow-sm);
     }
 
-    .mini-team-img {
+    .about-mini-doc-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    .mini-team-overlay {
+    .about-mini-doc-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.1) 70%);
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.15) 75%);
       padding: 14px;
       display: flex;
       flex-direction: column;
@@ -865,83 +919,162 @@
       color: #FFFFFF;
     }
 
-    .mini-team-name {
-      font-family: var(--font-display);
+    .about-mini-doc-name {
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 800;
     }
 
-    .mini-team-role {
+    .about-mini-doc-spec {
       font-size: 11px;
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.85);
     }
 
     /* ==========================================================================
-       SECTION 4: METRICS & AUTHORITY STATS ROW
+       SECTION 4: BIG METRICS STATS ROW
        ========================================================================== */
     .section-stats {
-      padding: 60px 0;
+      padding: 56px 0;
       background: #FFFFFF;
       border-top: 1px solid var(--border-subtle);
       border-bottom: 1px solid var(--border-subtle);
     }
 
-    .stats-four-columns {
+    .stats-four-boxes {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 32px;
-      text-align: left;
+      gap: 28px;
     }
 
     @media (max-width: 900px) {
-      .stats-four-columns {
+      .stats-four-boxes {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
     @media (max-width: 480px) {
-      .stats-four-columns {
+      .stats-four-boxes {
         grid-template-columns: 1fr;
       }
     }
 
-    .stat-metric-item {
+    .stat-metric-box {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 4px;
     }
 
-    .stat-huge-number {
-      font-family: var(--font-display);
-      font-size: clamp(38px, 4vw, 54px);
+    .stat-number-giant {
+      font-size: clamp(38px, 4.2vw, 54px);
       font-weight: 800;
       color: var(--text-main);
       line-height: 1;
-      letter-spacing: -1px;
+      letter-spacing: -0.03em;
     }
 
-    .stat-text-label {
-      font-size: 12px;
+    .stat-label-text {
+      font-size: 11.5px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
       color: var(--text-muted);
     }
 
     /* ==========================================================================
-       MODAL & INTERACTIVE BOOKING DRAWER
+       FOOTER & MAPA OFICIAL (Z=15)
        ========================================================================== */
+    .footer-section {
+      background: #0B131C;
+      color: #94A3B8;
+      padding: 70px 0 36px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-grid-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1.2fr;
+      gap: 44px;
+      margin-bottom: 50px;
+    }
+
+    @media (max-width: 900px) {
+      .footer-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    .footer-brand-heading {
+      font-size: 20px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+    }
+
+    .footer-paragraph {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .footer-cro-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--primary-teal);
+      background: rgba(13, 148, 136, 0.15);
+      padding: 4px 10px;
+      border-radius: var(--radius-xs);
+    }
+
+    .footer-title-sub {
+      font-size: 13.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #FFFFFF;
+      margin-bottom: 16px;
+    }
+
+    .footer-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 13.5px;
+    }
+
+    .map-container-box {
+      width: 100%;
+      height: 190px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .footer-credits {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 28px;
+      font-size: 13px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* Modal de Agendamento */
     .booking-modal-backdrop {
       position: fixed;
       inset: 0;
       background: rgba(11, 19, 28, 0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       z-index: 2000;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: 16px;
       opacity: 0;
       pointer-events: none;
       transition: var(--transition-smooth);
@@ -952,25 +1085,25 @@
       pointer-events: auto;
     }
 
-    .booking-modal-container {
+    .booking-modal-window {
       width: 100%;
-      max-width: 580px;
+      max-width: 540px;
       background: #FFFFFF;
-      border-radius: var(--radius-xl);
+      border-radius: var(--radius-md);
       box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transform: translateY(20px) scale(0.98);
+      transform: translateY(18px) scale(0.98);
       transition: var(--transition-smooth);
     }
 
-    .booking-modal-backdrop.open .booking-modal-container {
+    .booking-modal-backdrop.open .booking-modal-window {
       transform: translateY(0) scale(1);
     }
 
     .booking-modal-header {
-      padding: 24px 28px;
+      padding: 22px 26px;
       background: #0F172A;
       color: #FFFFFF;
       display: flex;
@@ -978,383 +1111,299 @@
       justify-content: space-between;
     }
 
-    .booking-modal-title {
-      font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: 700;
+    .booking-modal-heading {
+      font-size: 18px;
+      font-weight: 800;
       color: #FFFFFF;
     }
 
-    .btn-close-modal {
-      width: 32px;
-      height: 32px;
+    .btn-modal-close {
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.15);
       color: #FFFFFF;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 16px;
+      font-size: 15px;
       transition: var(--transition-fast);
     }
 
-    .btn-close-modal:hover {
+    .btn-modal-close:hover {
       background: rgba(255, 255, 255, 0.3);
     }
 
-    .booking-modal-body {
-      padding: 28px;
+    .booking-modal-content {
+      padding: 26px;
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 16px;
       max-height: 80vh;
       overflow-y: auto;
     }
 
-    .form-group {
+    .form-field-group {
       display: flex;
       flex-direction: column;
       gap: 6px;
     }
 
-    .form-label {
-      font-size: 13px;
-      font-weight: 600;
+    .field-label {
+      font-size: 12.5px;
+      font-weight: 700;
       color: var(--text-main);
     }
 
-    .form-input, .form-select {
+    .field-input, .field-select {
       width: 100%;
-      padding: 12px 16px;
+      padding: 11px 14px;
       border: 1px solid #CBD5E1;
-      border-radius: var(--radius-md);
-      font-family: var(--font-body);
+      border-radius: var(--radius-xs);
+      font-family: var(--font-main);
       font-size: 14px;
       outline: none;
       transition: var(--transition-fast);
     }
 
-    .form-input:focus, .form-select:focus {
+    .field-input:focus, .field-select:focus {
       border-color: var(--primary-teal);
       box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
     }
 
-    .btn-submit-whatsapp {
+    .btn-modal-whatsapp {
       background: #25D366;
       color: #FFFFFF;
-      padding: 16px;
-      border-radius: var(--radius-md);
-      font-family: var(--font-display);
-      font-size: 15px;
-      font-weight: 700;
+      padding: 14px;
+      border-radius: var(--radius-xs);
+      font-size: 14.5px;
+      font-weight: 800;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
       transition: var(--transition-fast);
-      margin-top: 10px;
+      margin-top: 8px;
     }
 
-    .btn-submit-whatsapp:hover {
+    .btn-modal-whatsapp:hover {
       background: #20BA5A;
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
     }
 
-    /* ==========================================================================
-       FOOTER & MAP
-       ========================================================================== */
-    .footer-section {
-      background: #0B131C;
-      color: #94A3B8;
-      padding: 80px 0 40px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr 1.2fr;
-      gap: 48px;
-      margin-bottom: 60px;
-    }
-
-    @media (max-width: 900px) {
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 36px;
-      }
-    }
-
-    .footer-brand-title {
-      font-family: var(--font-display);
-      font-size: 22px;
-      font-weight: 700;
-      color: #FFFFFF;
-      margin-bottom: 12px;
-    }
-
-    .footer-text {
-      font-size: 14px;
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
-
-    .footer-cro-tag {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      color: var(--primary-teal);
-      background: rgba(13, 148, 136, 0.15);
-      padding: 4px 10px;
-      border-radius: 6px;
-    }
-
-    .footer-col-title {
-      font-family: var(--font-display);
-      font-size: 14px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: #FFFFFF;
-      margin-bottom: 18px;
-    }
-
-    .footer-links-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      font-size: 14px;
-    }
-
-    .footer-links-list a:hover {
-      color: #FFFFFF;
-    }
-
-    .map-frame-box {
-      width: 100%;
-      height: 190px;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-    }
-
-    .footer-bottom-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 32px;
-      font-size: 13px;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    /* Floating WhatsApp Button */
-    .whatsapp-fab {
+    /* Floating WhatsApp */
+    .floating-whatsapp-fab {
       position: fixed;
-      bottom: 28px;
-      right: 28px;
-      width: 58px;
-      height: 58px;
+      bottom: 24px;
+      right: 24px;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
       background: #25D366;
       color: #FFFFFF;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.45);
+      box-shadow: 0 10px 28px rgba(37, 211, 102, 0.45);
       z-index: 999;
       transition: var(--transition-smooth);
     }
 
-    .whatsapp-fab:hover {
+    .floating-whatsapp-fab:hover {
       transform: scale(1.1);
-      box-shadow: 0 14px 40px rgba(37, 211, 102, 0.6);
+      box-shadow: 0 14px 36px rgba(37, 211, 102, 0.6);
     }
   </style>
 </head>
 <body>
 
   <!-- ========================================================================
-       HEADER / NAVIGATION
+       HERO CINEMÁTICO INTEIRIÇO COM SLIDE DE FUNDO & NAVBAR INTERNA
        ======================================================================== -->
-  <header class="header-nav-wrap">
-    <div class="container">
-      <div class="header-content">
-        <!-- Logomarca com Monograma Minimalista -->
-        <a href="#home" class="brand-logo">
-          <svg class="brand-icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+  <div class="hero-outer-wrapper">
+    <div class="hero-canvas" id="hero-frame">
+      
+      <!-- 5 Slides de Fundo com Crossfade -->
+      <div class="hero-slides-track">
+        <div class="hero-slide-layer active" id="slide-layer-0" style="background-image: url('slide-1.jpg');"></div>
+        <div class="hero-slide-layer" id="slide-layer-1" style="background-image: url('slide-2.jpg');"></div>
+        <div class="hero-slide-layer" id="slide-layer-2" style="background-image: url('slide-3.jpg');"></div>
+        <div class="hero-slide-layer" id="slide-layer-3" style="background-image: url('hero-dental.jpg');"></div>
+        <div class="hero-slide-layer" id="slide-layer-4" style="background-image: url('about-technology.jpg');"></div>
+      </div>
+
+      <!-- Gradiente Suave de Leitura -->
+      <div class="hero-gradient-overlay"></div>
+
+      <!-- 1. NAVBAR DENTRO DO HERO NO TOPO -->
+      <header class="hero-navbar-inner">
+        <!-- Logo Elevado com Emblema Geométrico Nobre -->
+        <a href="#hero-frame" class="hero-brand">
+          <svg class="brand-emblem-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="4.5" fill="#FFFFFF"/>
+            <path d="M18 2C18 2 20.5 9 24 12C27.5 15 34 18 34 18C34 18 27.5 21 24 24C20.5 27 18 34 18 34C18 34 15.5 27 12 24C8.5 21 2 18 2 18C2 18 8.5 15 12 12C15.5 9 18 2 18 2Z" fill="url(#brandGrad)" fill-opacity="0.95"/>
+            <defs>
+              <linearGradient id="brandGrad" x1="2" y1="2" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FFFFFF"/>
+                <stop offset="1" stop-color="#5EEAD4"/>
+              </linearGradient>
+            </defs>
           </svg>
-          <span>AURA DENTAL</span>
+          <div class="brand-title-group">
+            <span class="brand-title-main">AURA DENTAL</span>
+            <span class="brand-title-tag">ODONTOLOGIA MODERNA</span>
+          </div>
         </a>
 
-        <!-- Menu Flutuante Estilo Pílula -->
-        <nav class="nav-pill-menu">
-          <a href="#home" class="nav-link">Início</a>
-          <a href="#services" class="nav-link">Tratamentos</a>
-          <a href="#about" class="nav-link">Tecnologia</a>
-          <a href="#doctors" class="nav-link">Especialistas</a>
-          <a href="#contact" class="nav-link">Contato</a>
+        <!-- Menu Flutuante Central -->
+        <nav class="hero-nav-pill">
+          <a href="#hero-frame" class="hero-nav-link">Início</a>
+          <a href="#services" class="hero-nav-link">Serviços</a>
+          <a href="#about" class="hero-nav-link">Sobre Nós</a>
+          <a href="#depoimentos" class="hero-nav-link">Depoimentos</a>
+          <a href="#especialistas" class="hero-nav-link">Especialistas</a>
+          <a href="#contato" class="hero-nav-link">Contato</a>
         </nav>
 
-        <!-- CTA Principal -->
-        <button class="btn-header-cta" onclick="openBookingModal('Consulta Geral')">
+        <!-- CTA "BOOK A CALL ->" -->
+        <button class="hero-nav-cta" onclick="openBookingModal('Consulta Geral')">
           <span>AGENDAR CONSULTA</span>
-          <span class="btn-arrow-circle">
+          <span class="cta-arrow-circle">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
           </span>
         </button>
-      </div>
-    </div>
-  </header>
+      </header>
 
-  <!-- ========================================================================
-       HERO CINEMATIC SECTION
-       ======================================================================== -->
-  <section class="hero-section" id="home">
-    <div class="container">
-      <div class="hero-card-canvas">
-        <div class="hero-vignette-overlay"></div>
-
-        <!-- Topo do Hero: Headline + Descritivo -->
-        <div class="hero-content-top">
-          <h1 class="hero-headline">
-            ODONTOLOGIA MODERNA COM CUIDADO HUMANIZADO.
+      <!-- 2. CORPO CENTRAL DO HERO -->
+      <div class="hero-middle-body">
+        <!-- Esquerda: Headline Monumental em 3 Linhas (All-Caps Fiel ao Pinterest) -->
+        <div class="hero-left-title-box">
+          <h1 class="hero-main-title">
+            ODONTOLOGIA<br>
+            MODERNA COM<br>
+            CUIDADO GENTIL.
           </h1>
-          <p class="hero-subhead">
-            Tratamentos odontológicos de alta precisão para sorrisos saudáveis e confiantes em todas as idades — entregues com conforto absoluto, anestesia sem dor e tecnologia digital 3D.
-          </p>
         </div>
 
-        <!-- Base do Hero: Pills de Especialidades + Slider de Especialista -->
-        <div class="hero-content-bottom">
-          <!-- Pills de Tratamentos Rápidos -->
-          <div class="hero-pills-wrap">
-            <button class="hero-pill active" onclick="selectHeroPill(this, 'Check-up Digital')">Check-up Digital</button>
-            <button class="hero-pill" onclick="selectHeroPill(this, 'Clareamento a Laser')">Clareamento a Laser</button>
-            <button class="hero-pill" onclick="selectHeroPill(this, 'Lentes de Contato')">Lentes de Contato</button>
-            <button class="hero-pill" onclick="selectHeroPill(this, 'Alinhadores Invisíveis')">Alinhadores Invisíveis</button>
-            <button class="hero-pill" onclick="selectHeroPill(this, 'Implantes Guiados')">Implantes Guiados</button>
+        <!-- Direita: Texto Descritivo + Slider Controls + Card do Doutor -->
+        <div class="hero-right-meta">
+          <p class="hero-lead-text" id="hero-lead-desc">
+            Odontologia de alta precisão para sorrisos saudáveis e confiantes em todas as idades — entregues com conforto absoluto, tecnologia 3D e previsibilidade clínica.
+          </p>
+
+          <!-- Slider Controls: < 01 ─── 05 > -->
+          <div class="hero-slider-indicator-bar">
+            <button class="btn-hero-arrow" onclick="stepSlide(-1)" title="Slide Anterior">‹</button>
+            <span id="slider-curr-label">01</span>
+            <div class="slider-track-line">
+              <div class="slider-fill-line" id="slider-progress-bar" style="width: 20%;"></div>
+            </div>
+            <span>05</span>
+            <button class="btn-hero-arrow" onclick="stepSlide(1)" title="Próximo Slide">›</button>
           </div>
 
-          <!-- Doctor Slider Card Interativo (Padrão Pinterest) -->
-          <div class="doctor-slider-card" id="doctor-card">
-            <div class="doctor-slider-nav">
-              <div class="slider-counter">
-                <span id="slide-num-current">01</span>
-                <div class="slider-progress-track">
-                  <div class="slider-progress-bar" id="slide-bar"></div>
-                </div>
-                <span>04</span>
-              </div>
-              <div class="slider-nav-btns">
-                <button class="btn-slide-nav" onclick="prevDoctorSlide()" title="Especialista Anterior">‹</button>
-                <button class="btn-slide-nav" onclick="nextDoctorSlide()" title="Próximo Especialista">›</button>
-              </div>
+          <!-- Doctor Floating Card Interativo -->
+          <div class="hero-doctor-badge-card" id="doctor-card-box">
+            <div class="doctor-thumb-box">
+              <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=300&q=80" alt="Dr. Jonas Suherman" class="doctor-thumb-img" id="doctor-img" />
             </div>
-
-            <div class="doctor-profile-info">
-              <div class="doctor-avatar-wrap">
-                <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80" alt="Dr. Rafael Valente" class="doctor-avatar-img" id="doctor-img" />
-              </div>
-              <div class="doctor-meta-col">
-                <h3 class="doctor-name" id="doctor-name">Dr. Rafael Valente</h3>
-                <span class="doctor-spec" id="doctor-spec">Implantodontia & Estética Oral</span>
-                <div class="doctor-badge-row">
-                  <span id="doctor-exp">12 anos de experiência</span>
-                  <span class="doctor-rating-pill">★ 4.9</span>
-                </div>
+            <div class="doctor-info-box">
+              <h3 class="doctor-card-name" id="doctor-name">Dr. Jonas Suherman</h3>
+              <span class="doctor-card-role" id="doctor-role">Odontopediatria & Prevenção</span>
+              <div class="doctor-card-rating">
+                <span id="doctor-exp">7 anos de experiência</span>
+                <span class="rating-star-badge" id="doctor-rating">★ 4.9 (145)</span>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- 3. RODAPÉ DO HERO: BOTÕES DE CATEGORIA / SLIDE (MUDAM A FOTO DE FUNDO) -->
+      <div class="hero-bottom-controls">
+        <button class="hero-slide-btn active" onclick="activateSlide(0)">Check-up Digital</button>
+        <button class="hero-slide-btn" onclick="activateSlide(1)">Clareamento a Laser</button>
+        <button class="hero-slide-btn" onclick="activateSlide(2)">Lentes de Contato</button>
+        <button class="hero-slide-btn" onclick="activateSlide(3)">Alinhadores Invisíveis</button>
+        <button class="hero-slide-btn" onclick="activateSlide(4)">Implantes Guiados</button>
+      </div>
+
     </div>
-  </section>
+  </div>
 
   <!-- ========================================================================
-       SECTION 2: SIGNATURE DENTAL SERVICES
+       SECTION 2: SIGNATURE DENTAL SERVICES (LAYOUT PINTEREST)
        ======================================================================== -->
   <section class="section-services" id="services">
     <div class="container">
-      <div class="services-header-grid">
+      <div class="services-header-split">
         <div>
-          <span class="section-eyebrow">Tratamentos de Alta Precisão /</span>
-          <h2 class="section-headline">DESCUBRA NOSSOS SERVIÇOS DE ASSINATURA</h2>
+          <span class="service-eyebrow">Tratamentos de Assinatura / <span>Excelência</span></span>
+          <h2 class="service-main-headline">DESCUBRA NOSSOS SERVIÇOS EXCLUSIVOS</h2>
         </div>
-        <p class="section-desc">
-          Experimente a odontologia contemporânea com conforto, precisão milimétrica e atenção dedicada a cada detalhe. Nosso espaço foi projetado para um atendimento acolhedor, calmo e livre de qualquer estresse.
+        <p class="service-lead-paragraph">
+          Experimente o cuidado odontológico moderno entregue com atenção refinada aos mínimos detalhes. Nossa clínica proporciona uma atmosfera serena e acolhedora, planejada para consultas 100% livres de desconforto ou ansiedade.
         </p>
       </div>
 
-      <div class="services-showcase-grid">
-        <!-- Coluna Esquerda: Prova Social & Controles de Slider -->
-        <div class="social-proof-lateral">
-          <div class="reviews-badge-row">
-            <div class="avatar-cluster">
-              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" class="cluster-img" alt="Paciente 1" />
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" class="cluster-img" alt="Paciente 2" />
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" class="cluster-img" alt="Paciente 3" />
+      <div class="services-main-row">
+        <!-- Lateral: Avaliações do Google + Controles do Carrossel -->
+        <div class="reviews-lateral-card" id="depoimentos">
+          <div class="reviews-avatar-row">
+            <div class="avatars-overlap">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" class="avatar-face" alt="Paciente 1" />
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" class="avatar-face" alt="Paciente 2" />
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" class="avatar-face" alt="Paciente 3" />
             </div>
-            <div class="reviews-count-box">
-              <span class="reviews-big-num">850+</span>
-              <span class="reviews-sublabel">Avaliações 5★</span>
+            <div class="reviews-score-col">
+              <span class="score-big">850+</span>
+              <span class="score-label">Avaliações 5★</span>
             </div>
           </div>
 
-          <p class="social-proof-quote" id="social-quote">
-            "Desde a primeira consulta de escaneamento 3D até a entrega das minhas lentes de contato, o atendimento foi impecável. Zero dor e resultado ultra natural."
+          <p class="reviews-quote-text" id="quote-text-el">
+            "Desde a primeira consulta com escaneamento 3D até a entrega das minhas lentes, o atendimento foi impecável. Zero dor, tecnologia de outro planeta e resultado ultra natural."
           </p>
 
-          <div class="carousel-arrows-row">
-            <button class="btn-circle-arrow" onclick="rotateServiceSlide(-1)" title="Anterior">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="15 18 9 12 15 6"></polyline>
-              </svg>
-            </button>
-            <button class="btn-circle-arrow" onclick="rotateServiceSlide(1)" title="Próximo">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </button>
+          <div class="arrows-round-row">
+            <button class="btn-round-nav" onclick="cycleQuote(-1)" title="Depoimento Anterior">‹</button>
+            <button class="btn-round-nav" onclick="cycleQuote(1)" title="Próximo Depoimento">›</button>
           </div>
         </div>
 
-        <!-- 3 Cards de Tratamentos com Imagens Nobres -->
-        <div class="services-cards-track" id="services-track">
-          <!-- Card 1: Lentes de Contato Dental -->
-          <div class="service-card-item" onclick="openBookingModal('Lentes de Contato Dental')">
-            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80" alt="Lentes de Contato Dental" class="service-bg-img" />
-            <div class="service-card-overlay"></div>
-            <div class="service-card-footer">
-              <h3 class="service-card-title">Lentes de Contato & Facetas</h3>
-              <div class="service-arrow-btn">➔</div>
+        <!-- 3 Cards de Tratamentos Fotográficos -->
+        <div class="services-cards-grid">
+          <!-- Card 1 -->
+          <div class="service-interactive-card" onclick="openBookingModal('Check-up Digital & Profilaxia')">
+            <img src="slide-1.jpg" alt="Check-up Digital e Limpeza" class="service-card-photo" />
+            <div class="service-photo-shade"></div>
+            <div class="service-card-caption">
+              <h3 class="service-caption-title">Check-up Digital & Profilaxia</h3>
+              <div class="service-btn-arrow-pill">➔</div>
             </div>
           </div>
 
-          <!-- Card 2: Alinhadores Invisíveis -->
-          <div class="service-card-item" onclick="openBookingModal('Alinhadores Invisíveis / Invisalign')">
-            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&q=80" alt="Checkup & Profilaxia" class="service-bg-img" />
-            <div class="service-card-overlay"></div>
-            <div class="service-card-footer">
-              <h3 class="service-card-title">Alinhadores Invisíveis 3D</h3>
-              <div class="service-arrow-btn">➔</div>
+          <!-- Card 2 -->
+          <div class="service-interactive-card" onclick="openBookingModal('Clareamento a Laser Avançado')">
+            <img src="slide-2.jpg" alt="Clareamento a Laser" class="service-card-photo" />
+            <div class="service-photo-shade"></div>
+            <div class="service-card-caption">
+              <h3 class="service-caption-title">Clareamento a Laser Avançado</h3>
+              <div class="service-btn-arrow-pill">➔</div>
             </div>
           </div>
 
-          <!-- Card 3: Implantes Guiados -->
-          <div class="service-card-item" onclick="openBookingModal('Implantes Dentários Guiados')">
-            <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=600&q=80" alt="Clareamento a Laser" class="service-bg-img" />
-            <div class="service-card-overlay"></div>
-            <div class="service-card-footer">
-              <h3 class="service-card-title">Implantes Guiados & Cirurgia Sem Corte</h3>
-              <div class="service-arrow-btn">➔</div>
+          <!-- Card 3 -->
+          <div class="service-interactive-card" onclick="openBookingModal('Lentes de Contato em Porcelana')">
+            <img src="slide-3.jpg" alt="Lentes de Contato e Alinhadores" class="service-card-photo" />
+            <div class="service-photo-shade"></div>
+            <div class="service-card-caption">
+              <h3 class="service-caption-title">Lentes de Contato & Alinhadores</h3>
+              <div class="service-btn-arrow-pill">➔</div>
             </div>
           </div>
         </div>
@@ -1367,12 +1416,12 @@
        ======================================================================== -->
   <section class="section-about" id="about">
     <div class="container">
-      <div class="about-split-grid">
+      <div class="about-two-columns">
         <!-- Visual Column -->
-        <div class="about-visual-col">
-          <img src="about-technology.jpg" alt="Tecnologia Intraoral 3D Aura Dental" class="about-cinematic-img" />
-          <div class="about-floating-badge">
-            <div class="badge-icon-scanner">
+        <div class="about-photo-wrapper">
+          <img src="about-technology.jpg" alt="Tecnologia Intraoral 3D Aura Dental" class="about-main-image" />
+          <div class="about-floating-scanner-tag">
+            <div class="scanner-icon-box">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
                 <rect x="2" y="3" width="20" height="14" rx="2"></rect>
                 <line x1="8" y1="21" x2="16" y2="21"></line>
@@ -1380,40 +1429,40 @@
               </svg>
             </div>
             <div>
-              <strong style="font-family: var(--font-display); font-size: 13px; color: #0F172A; display: block;">Scanner 3D Intraoral</strong>
-              <span style="font-size: 11px; color: #64748B;">Diagnóstico digital em tempo real</span>
+              <strong style="font-size: 13px; color: #0F172A; display: block; font-weight: 800;">Scanner 3D Intraoral</strong>
+              <span style="font-size: 11px; color: #64748B;">Mapeamento digital em tempo real sem moldes</span>
             </div>
           </div>
         </div>
 
-        <!-- Info Column -->
-        <div class="about-info-col">
-          <span class="section-eyebrow">Sobre a Clínica /</span>
-          <h2 class="section-headline">EXCELÊNCIA EM ODONTOLOGIA COM CUIDADO HUMANIZADO</h2>
-          <p class="about-lead-desc">
-            Na Aura Dental Clinic, combinamos ciência de ponta, escaneamento digital tridimensional e ambientes projetados para seu bem-estar. Nossos tratamentos contam com anestesia computadorizada indolor e sedação consciente para proporcionar uma experiência tranquila e transformadora.
+        <!-- Details Column -->
+        <div class="about-details-col">
+          <span class="service-eyebrow">Sobre a Clínica / <span>Padrão Internacional</span></span>
+          <h2 class="service-main-headline">EXCELÊNCIA EM ODONTOLOGIA COM CUIDADO GENTIL</h2>
+          <p class="about-paragraph">
+            Na Aura Dental Clinic, integramos tecnologia tridimensional, escaneamento óptico de alta definição e biossegurança hospitalar com uma abordagem verdadeiramente humana. Eliminamos o desconforto de moldagens tradicionais com diagnósticos digitais instantâneos.
           </p>
 
-          <button class="btn-read-more" onclick="openBookingModal('Conhecer Clínica')">
+          <button class="btn-read-more-tag" onclick="openBookingModal('Conhecer Estrutura')">
             <span>Conhecer Estrutura & Agendar</span>
             <span>↗</span>
           </button>
 
-          <!-- Mini Team Cards (Padrão Pinterest) -->
-          <div class="mini-team-row" id="doctors">
-            <div class="mini-team-card">
-              <img src="https://images.unsplash.com/photo-1594824813689-f59a35e40e2d?auto=format&fit=crop&w=400&q=80" class="mini-team-img" alt="Dra. Camila Castro" />
-              <div class="mini-team-overlay">
-                <span class="mini-team-name">Dra. Camila Castro</span>
-                <span class="mini-team-role">Ortodontia Digital • Invisalign Top Doctor</span>
+          <!-- Mini Especialistas (Layout Pinterest) -->
+          <div class="about-mini-team-grid" id="especialistas">
+            <div class="about-mini-doc-card">
+              <img src="https://images.unsplash.com/photo-1594824813589-3221b6d07d9f?auto=format&fit=crop&w=400&q=80" class="about-mini-doc-img" alt="Dra. Camila Castro" />
+              <div class="about-mini-doc-overlay">
+                <span class="about-mini-doc-name">Dra. Camila Castro</span>
+                <span class="about-mini-doc-spec">Ortodontia Digital • Invisalign Top Doctor</span>
               </div>
             </div>
 
-            <div class="mini-team-card">
-              <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=400&q=80" class="mini-team-img" alt="Dr. Felipe Ramos" />
-              <div class="mini-team-overlay">
-                <span class="mini-team-name">Dr. Felipe Ramos</span>
-                <span class="mini-team-role">Reabilitação Oral • Lentes de Porcelana</span>
+            <div class="about-mini-doc-card">
+              <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=400&q=80" class="about-mini-doc-img" alt="Dr. Rafael Valente" />
+              <div class="about-mini-doc-overlay">
+                <span class="about-mini-doc-name">Dr. Rafael Valente</span>
+                <span class="about-mini-doc-spec">Reabilitação Oral & Lentes de Porcelana</span>
               </div>
             </div>
           </div>
@@ -1423,64 +1472,64 @@
   </section>
 
   <!-- ========================================================================
-       SECTION 4: BIG STATS METRICS ROW
+       SECTION 4: BIG METRICS STATS ROW
        ======================================================================== -->
   <section class="section-stats">
     <div class="container">
-      <div class="stats-four-columns">
-        <div class="stat-metric-item">
-          <span class="stat-huge-number">98%</span>
-          <span class="stat-text-label">Índice de Satisfação dos Pacientes</span>
+      <div class="stats-four-boxes">
+        <div class="stat-metric-box">
+          <span class="stat-number-giant">98%</span>
+          <span class="stat-label-text">Índice de Satisfação dos Pacientes</span>
         </div>
-        <div class="stat-metric-item">
-          <span class="stat-huge-number">15K+</span>
-          <span class="stat-text-label">Sorrisos Reabilitados com Sucesso</span>
+        <div class="stat-metric-box">
+          <span class="stat-number-giant">15K+</span>
+          <span class="stat-label-text">Sorrisos Reabilitados com Sucesso</span>
         </div>
-        <div class="stat-metric-item">
-          <span class="stat-huge-number">4.9★</span>
-          <span class="stat-text-label">Nota Média no Google (850+ Avaliações)</span>
+        <div class="stat-metric-box">
+          <span class="stat-number-giant">4.9★</span>
+          <span class="stat-label-text">Nota Média no Google (850+ Avaliações)</span>
         </div>
-        <div class="stat-metric-item">
-          <span class="stat-huge-number">100%</span>
-          <span class="stat-text-label">Planejamento Digital 3D Pré-Aprovado</span>
+        <div class="stat-metric-box">
+          <span class="stat-number-giant">100%</span>
+          <span class="stat-label-text">Planejamento 3D Pré-Aprovado</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========================================================================
-       FOOTER & MAP
+       FOOTER & MAPA OFICIAL Z=15
        ======================================================================== -->
-  <footer class="footer-section" id="contact">
+  <footer class="footer-section" id="contato">
     <div class="container">
-      <div class="footer-grid">
-        <!-- Coluna 1: Marca & Registro -->
+      <div class="footer-grid-layout">
+        <!-- Coluna 1 -->
         <div>
-          <h3 class="footer-brand-title">AURA DENTAL CLINIC</h3>
-          <p class="footer-text">
-            Centro avançado de reabilitação oral, implantodontia guiada e estética dental de alta precisão.
+          <h3 class="footer-brand-heading">AURA DENTAL CLINIC</h3>
+          <p class="footer-paragraph">
+            Centro de excelência em reabilitação oral, odontologia estética e alinhadores transparentes com padrão internacional de conforto.
           </p>
-          <span class="footer-cro-tag">RT: Dr. Rafael Valente • CRO-GO 12.845</span>
+          <span class="footer-cro-badge">RT: Dr. Rafael Valente • CRO-GO 12.845</span>
         </div>
 
-        <!-- Coluna 2: Atendimento & Horários -->
+        <!-- Coluna 2 -->
         <div>
-          <h4 class="footer-col-title">Horários de Atendimento</h4>
-          <ul class="footer-links-list">
+          <h4 class="footer-title-sub">Horários & Atendimento</h4>
+          <ul class="footer-list">
             <li>Segunda a Sexta: 08:00 às 19:00</li>
             <li>Sábado: 08:00 às 13:00</li>
-            <li>Estacionamento com Manobrista no Local</li>
-            <li>Plantão WhatsApp: (62) 98242-0983</li>
+            <li>Estacionamento com Valet no Local</li>
+            <li>WhatsApp Oficial: (62) 98242-0983</li>
           </ul>
         </div>
 
-        <!-- Coluna 3: Localização & Mapa Constitucional z=15 -->
+        <!-- Coluna 3: Mapa Regional z=15 -->
         <div>
-          <h4 class="footer-col-title">Endereço Nobre</h4>
-          <p class="footer-text" style="margin-bottom: 12px;">
+          <h4 class="footer-title-sub">Localização Nobre</h4>
+          <p class="footer-paragraph" style="margin-bottom: 10px;">
             Av. 136, Ed. New York Square, Sala 1402 — Setor Marista, Goiânia - GO
           </p>
-          <div class="map-frame-box">
+          <div class="map-container-box">
             <iframe 
               src="https://maps.google.com/maps?q=Av.+136,+Setor+Marista,+Goiania+-+GO&t=&z=15&ie=UTF8&iwloc=&output=embed" 
               width="100%" 
@@ -1493,50 +1542,50 @@
         </div>
       </div>
 
-      <div class="footer-bottom-row">
+      <div class="footer-credits">
         <span>© 2026 Aura Dental Clinic. Todos os direitos reservados.</span>
-        <span>Desenvolvido com excelência por <a href="https://paginasweb.com.br" target="_blank" style="color: #FFFFFF; font-weight: 600;">Páginas Web</a>.</span>
+        <span>Desenvolvido com excelência por <a href="https://paginasweb.com.br" target="_blank" style="color: #FFFFFF; font-weight: 700;">Páginas Web</a>.</span>
       </div>
     </div>
   </footer>
 
   <!-- ========================================================================
-       MODAL DE AGENDAMENTO INTERATIVO
+       MODAL DE AGENDAMENTO WHATSAPP
        ======================================================================== -->
   <div class="booking-modal-backdrop" id="booking-modal" onclick="closeBookingModal(event)">
-    <div class="booking-modal-container" onclick="event.stopPropagation()">
+    <div class="booking-modal-window" onclick="event.stopPropagation()">
       <div class="booking-modal-header">
-        <h3 class="booking-modal-title">Agendar Consulta de Avaliação</h3>
-        <button class="btn-close-modal" onclick="closeBookingModal()">✕</button>
+        <h3 class="booking-modal-heading">Agendar Consulta de Avaliação</h3>
+        <button class="btn-modal-close" onclick="closeBookingModal()">✕</button>
       </div>
-      <div class="booking-modal-body">
-        <div class="form-group">
-          <label class="form-label">Seu Nome Completo</label>
-          <input type="text" id="modal-name" class="form-input" placeholder="Ex: Ana Carolina Silva" />
+      <div class="booking-modal-content">
+        <div class="form-field-group">
+          <label class="field-label">Seu Nome Completo</label>
+          <input type="text" id="modal-name" class="field-input" placeholder="Ex: Ana Carolina Silva" />
         </div>
 
-        <div class="form-group">
-          <label class="form-label">Tratamento de Interesse</label>
-          <select id="modal-service" class="form-select">
-            <option value="Check-up Digital e Limpeza">Check-up Digital & Profilaxia</option>
-            <option value="Lentes de Contato Dental">Lentes de Contato & Facetas</option>
+        <div class="form-field-group">
+          <label class="field-label">Tratamento de Interesse</label>
+          <select id="modal-service" class="field-select">
+            <option value="Check-up Digital & Profilaxia">Check-up Digital & Profilaxia</option>
+            <option value="Clareamento a Laser Avançado">Clareamento a Laser Avançado</option>
+            <option value="Lentes de Contato em Porcelana">Lentes de Contato em Porcelana</option>
             <option value="Alinhadores Invisíveis (Invisalign)">Alinhadores Invisíveis (Invisalign)</option>
-            <option value="Implantes Dentários Guiados">Implantes Dentários Guiados</option>
-            <option value="Clareamento a Laser">Clareamento a Laser Dental</option>
-            <option value="Urgência / Dor">Avaliação de Urgência / Dor</option>
+            <option value="Implantes Dentários Guiados 3D">Implantes Dentários Guiados 3D</option>
+            <option value="Avaliação Geral / Outros">Avaliação Geral / Outros</option>
           </select>
         </div>
 
-        <div class="form-group">
-          <label class="form-label">Melhor Período para Consulta</label>
-          <select id="modal-period" class="form-select">
+        <div class="form-field-group">
+          <label class="field-label">Melhor Período para Consulta</label>
+          <select id="modal-period" class="field-select">
             <option value="Manhã (08h às 12h)">Manhã (08h às 12h)</option>
             <option value="Tarde (13h às 18h)">Tarde (13h às 18h)</option>
-            <option value="Sábado">Sábado (08h às 12h)</option>
+            <option value="Sábado (08h às 12h)">Sábado (08h às 12h)</option>
           </select>
         </div>
 
-        <button class="btn-submit-whatsapp" onclick="submitBookingToWhatsApp()">
+        <button class="btn-modal-whatsapp" onclick="submitBookingToWhatsApp()">
           <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
             <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.586 1.83.896 2.795.896 3.182 0 5.768-2.587 5.768-5.766.001-3.182-2.585-5.783-5.768-5.783zm0-2.172c4.418 0 8 3.582 8 8s-3.582 8-8 8c-1.398 0-2.707-.361-3.856-.991l-4.175 1.094 1.116-4.081c-.707-1.196-1.085-2.569-1.085-4.022 0-4.418 3.582-8 8-8z"/>
           </svg>
@@ -1547,109 +1596,150 @@
   </div>
 
   <!-- Botão Flutuante de WhatsApp -->
-  <a href="https://wa.me/5562982420983?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Aura%20Dental%20Clinic." class="whatsapp-fab" target="_blank" title="Falar no WhatsApp">
-    <svg width="30" height="30" fill="currentColor" viewBox="0 0 24 24">
+  <a href="https://wa.me/5562982420983?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Aura%20Dental%20Clinic." class="floating-whatsapp-fab" target="_blank" title="Falar no WhatsApp">
+    <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
       <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.586 1.83.896 2.795.896 3.182 0 5.768-2.587 5.768-5.766.001-3.182-2.585-5.783-5.768-5.783zm0-2.172c4.418 0 8 3.582 8 8s-3.582 8-8 8c-1.398 0-2.707-.361-3.856-.991l-4.175 1.094 1.116-4.081c-.707-1.196-1.085-2.569-1.085-4.022 0-4.418 3.582-8 8-8z"/>
     </svg>
   </a>
 
   <!-- ========================================================================
-       JAVASCRIPT: SLIDERS & INTERATIVIDADE
+       JAVASCRIPT: SLIDE ENGINE DINÂMICO & INTERATIVIDADE
        ======================================================================== -->
   <script>
-    // 1. Slider de Médicos Especialistas no Hero
-    const doctorsData = [
+    // 5 Slides com Foto de Fundo, Doutor Correspondente e Descritivo
+    const slidesData = [
       {
-        num: '01',
-        name: 'Dr. Rafael Valente',
-        spec: 'Implantodontia & Reabilitação Oral',
-        exp: '12 anos de experiência',
-        rating: '★ 4.9',
-        img: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80'
+        pillText: 'Check-up Digital',
+        lead: 'Odontologia de alta precisão para sorrisos saudáveis e confiantes em todas as idades — entregues com conforto absoluto, tecnologia 3D e previsibilidade clínica.',
+        doctorName: 'Dr. Jonas Suherman',
+        doctorRole: 'Odontopediatria & Prevenção',
+        doctorExp: '7 anos de experiência',
+        doctorRating: '★ 4.9 (145)',
+        doctorImg: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=300&q=80'
       },
       {
-        num: '02',
-        name: 'Dra. Camila Castro',
-        spec: 'Ortodontia Digital & Invisalign Diamond',
-        exp: '9 anos de experiência',
-        rating: '★ 5.0',
-        img: 'https://images.unsplash.com/photo-1594824813689-f59a35e40e2d?auto=format&fit=crop&w=400&q=80'
+        pillText: 'Clareamento a Laser',
+        lead: 'Clareamento a laser dental de alta potência e profilaxia ultrassônica indolor, proporcionando dentes até 6 tons mais brancos com total proteção ao esmalte.',
+        doctorName: 'Dra. Camila Castro',
+        doctorRole: 'Estética Dental & Clareamento',
+        doctorExp: '9 anos de experiência',
+        doctorRating: '★ 5.0 (198)',
+        doctorImg: 'https://images.unsplash.com/photo-1594824813589-3221b6d07d9f?auto=format&fit=crop&w=300&q=80'
       },
       {
-        num: '03',
-        name: 'Dr. Felipe Ramos',
-        spec: 'Lentes de Contato & Estética Dental',
-        exp: '15 anos de experiência',
-        rating: '★ 4.9',
-        img: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=400&q=80'
+        pillText: 'Lentes de Contato',
+        lead: 'Lentes ultrafinas e facetas em porcelana pura E.max com preparo minimamente invasivo, planejadas em 3D para uma harmonia facial aristocrática e natural.',
+        doctorName: 'Dr. Rafael Valente',
+        doctorRole: 'Reabilitação Oral & Prótese',
+        doctorExp: '14 anos de experiência',
+        doctorRating: '★ 4.9 (312)',
+        doctorImg: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=300&q=80'
       },
       {
-        num: '04',
-        name: 'Dra. Juliana Rocha',
-        spec: 'Odontopediatria & Harmonização Orofacial',
-        exp: '8 anos de experiência',
-        rating: '★ 5.0',
-        img: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80'
+        pillText: 'Alinhadores Invisíveis',
+        lead: 'Correção ortodôntica sem braquetes ou fios metálicos, guiada por escaneamento iTero e alinhadores transparentes removíveis com conforto imperceptível.',
+        doctorName: 'Dra. Juliana Rocha',
+        doctorRole: 'Ortodontia Digital & Invisalign',
+        doctorExp: '8 anos de experiência',
+        doctorRating: '★ 4.9 (174)',
+        doctorImg: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=300&q=80'
+      },
+      {
+        pillText: 'Implantes Guiados',
+        lead: 'Recupere dentes perdidos e a mastigação completa com implantes suíços guiados por tomografia 3D, procedimento sem cortes de bisturi e cicatrização acelerada.',
+        doctorName: 'Dr. Felipe Ramos',
+        doctorRole: 'Implantodontia & Cirurgia Guiada',
+        doctorExp: '11 anos de experiência',
+        doctorRating: '★ 5.0 (240)',
+        doctorImg: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=300&q=80'
       }
     ];
 
-    let currentDoctorIndex = 0;
+    let currentSlide = 0;
 
-    function updateDoctorSlide() {
-      const doc = doctorsData[currentDoctorIndex];
-      document.getElementById('slide-num-current').textContent = doc.num;
-      document.getElementById('doctor-name').textContent = doc.name;
-      document.getElementById('doctor-spec').textContent = doc.spec;
-      document.getElementById('doctor-exp').textContent = doc.exp;
-      document.getElementById('doctor-img').src = doc.img;
-      document.getElementById('doctor-img').alt = doc.name;
+    function activateSlide(index) {
+      currentSlide = (index + slidesData.length) % slidesData.length;
+      const data = slidesData[currentSlide];
 
-      const progressBar = document.getElementById('slide-bar');
-      progressBar.style.width = `${((currentDoctorIndex + 1) / doctorsData.length) * 100}%`;
-    }
+      // 1. Transição de Fundo das Fotos
+      const layers = document.querySelectorAll('.hero-slide-layer');
+      layers.forEach((layer, i) => {
+        if (i === currentSlide) {
+          layer.classList.add('active');
+        } else {
+          layer.classList.remove('active');
+        }
+      });
 
-    function nextDoctorSlide() {
-      currentDoctorIndex = (currentDoctorIndex + 1) % doctorsData.length;
-      updateDoctorSlide();
-    }
+      // 2. Transição dos Botões Pills do Rodapé
+      const pills = document.querySelectorAll('.hero-slide-btn');
+      pills.forEach((pill, i) => {
+        if (i === currentSlide) {
+          pill.classList.add('active');
+        } else {
+          pill.classList.remove('active');
+        }
+      });
 
-    function prevDoctorSlide() {
-      currentDoctorIndex = (currentDoctorIndex - 1 + doctorsData.length) % doctorsData.length;
-      updateDoctorSlide();
-    }
+      // 3. Indicador Numérico e Barra de Progresso
+      document.getElementById('slider-curr-label').textContent = '0' + (currentSlide + 1);
+      const progressBar = document.getElementById('slider-progress-bar');
+      progressBar.style.width = ((currentSlide + 1) / slidesData.length * 100) + '%';
 
-    // 2. Seleção de Pills no Hero
-    function selectHeroPill(el, serviceName) {
-      document.querySelectorAll('.hero-pill').forEach(btn => btn.classList.remove('active'));
-      el.classList.add('active');
-      openBookingModal(serviceName);
-    }
-
-    // 3. Slider de Prova Social Lateral
-    const quotes = [
-      '"Desde a primeira consulta de escaneamento 3D até a entrega das minhas lentes de contato, o atendimento foi impecável. Zero dor e resultado ultra natural."',
-      '"Fiz meu tratamento de Invisalign com a Dra. Camila e em menos de 8 meses meus dentes estavam perfeitos. O conforto da clínica é outro nível."',
-      '"Sempre tive pânico de agulha e anestesia. Na Aura Dental a anestesia computadorizada é mágica, não senti absolutamente nada!"'
-    ];
-    let currentQuoteIndex = 0;
-    function rotateServiceSlide(direction) {
-      currentQuoteIndex = (currentQuoteIndex + direction + quotes.length) % quotes.length;
-      const quoteEl = document.getElementById('social-quote');
-      quoteEl.style.opacity = 0;
+      // 4. Atualização Suave do Texto Descritivo
+      const leadEl = document.getElementById('hero-lead-desc');
+      leadEl.style.opacity = '0';
       setTimeout(() => {
-        quoteEl.textContent = quotes[currentQuoteIndex];
-        quoteEl.style.opacity = 1;
+        leadEl.textContent = data.lead;
+        leadEl.style.opacity = '1';
+      }, 150);
+
+      // 5. Atualização Suave do Card do Especialista
+      const docCard = document.getElementById('doctor-card-box');
+      docCard.style.opacity = '0.7';
+      docCard.style.transform = 'translateY(4px)';
+      setTimeout(() => {
+        document.getElementById('doctor-name').textContent = data.doctorName;
+        document.getElementById('doctor-role').textContent = data.doctorRole;
+        document.getElementById('doctor-exp').textContent = data.doctorExp;
+        document.getElementById('doctor-rating').textContent = data.doctorRating;
+        document.getElementById('doctor-img').src = data.doctorImg;
+        document.getElementById('doctor-img').alt = data.doctorName;
+        docCard.style.opacity = '1';
+        docCard.style.transform = 'translateY(0)';
+      }, 150);
+    }
+
+    function stepSlide(delta) {
+      activateSlide(currentSlide + delta);
+    }
+
+    // Carrossel de Depoimentos Laterais
+    const quotesList = [
+      '"Desde a primeira consulta com escaneamento 3D até a entrega das minhas lentes, o atendimento foi impecável. Zero dor, tecnologia de outro planeta e resultado ultra natural."',
+      '"Fiz meu tratamento ortodôntico invisível na Aura Dental e o acompanhamento digital semanal fez toda a diferença. O conforto é inigualável."',
+      '"Tinha muito receio de colocar implante dentário. A cirurgia guiada por computador durou menos de 30 minutos e no dia seguinte já estava trabalhando sem dor."'
+    ];
+    let quoteIndex = 0;
+
+    function cycleQuote(delta) {
+      quoteIndex = (quoteIndex + delta + quotesList.length) % quotesList.length;
+      const quoteEl = document.getElementById('quote-text-el');
+      quoteEl.style.opacity = '0';
+      setTimeout(() => {
+        quoteEl.textContent = quotesList[quoteIndex];
+        quoteEl.style.opacity = '1';
       }, 200);
     }
 
-    // 4. Modal de Agendamento
-    function openBookingModal(preSelectedService = '') {
+    // Modal de Agendamento
+    function openBookingModal(service = '') {
       const modal = document.getElementById('booking-modal');
       const select = document.getElementById('modal-service');
-      if (preSelectedService) {
+      if (service) {
         for (let i = 0; i < select.options.length; i++) {
-          if (select.options[i].text.toLowerCase().includes(preSelectedService.toLowerCase()) || 
-              select.options[i].value.toLowerCase().includes(preSelectedService.toLowerCase())) {
+          if (select.options[i].text.toLowerCase().includes(service.toLowerCase()) || 
+              select.options[i].value.toLowerCase().includes(service.toLowerCase())) {
             select.selectedIndex = i;
             break;
           }
@@ -1658,8 +1748,8 @@
       modal.classList.add('open');
     }
 
-    function closeBookingModal(event) {
-      if (!event || event.target.id === 'booking-modal' || event.target.classList.contains('btn-close-modal')) {
+    function closeBookingModal(e) {
+      if (!e || e.target.id === 'booking-modal' || e.target.classList.contains('btn-modal-close')) {
         document.getElementById('booking-modal').classList.remove('open');
       }
     }
@@ -1671,12 +1761,12 @@
 
       const text = `*NOVO AGENDAMENTO • AURA DENTAL*%0A%0A` +
         `• *Paciente:* ${encodeURIComponent(name)}%0A` +
-        `• *Procedimento:* ${encodeURIComponent(service)}%0A` +
-        `• *Preferencia de Horário:* ${encodeURIComponent(period)}%0A%0A` +
+        `• *Tratamento:* ${encodeURIComponent(service)}%0A` +
+        `• *Período Preferencial:* ${encodeURIComponent(period)}%0A%0A` +
         `Olá! Gostaria de confirmar a disponibilidade para minha consulta de avaliação.`;
 
-      const whatsappNumber = '5562982420983';
-      window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
+      const phone = '5562982420983';
+      window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
       closeBookingModal();
     }
   </script>
