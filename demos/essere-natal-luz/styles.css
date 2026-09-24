@@ -1,0 +1,428 @@
+/* ==========================================================================
+   Essere Viagens — Master Template Design System Oficial
+   Paleta: Azul #143159 | Laranja #FF751F | Tipografia: Montserrat & Playfair Display
+   Arquitetura: Mobile-First Nativa
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600;1,700&family=Cormorant+Garamond:ital,wght@0,600;1,400;1,600;1,700&display=swap');
+
+:root {
+  /* Cores Principais do Manual de Marca */
+  --color-primary-orange: #FF751F;
+  --color-primary-orange-hover: #E65E07;
+  --color-primary-orange-light: #FFF4EC;
+  --color-primary-orange-glow: rgba(255, 117, 31, 0.28);
+
+  --color-brand-blue: #143159;
+  --color-brand-blue-hover: #0B1D36;
+  --color-brand-blue-light: #F0F5FA;
+  --color-brand-blue-border: #D0DFEE;
+
+  --color-text-main: #0F172A;
+  --color-text-muted: #475569;
+  --color-text-light: #94A3B8;
+
+  --bg-body: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --border-card: #E2E8F0;
+  --border-card-hover: #CBD5E1;
+
+  --shadow-subtle: 0 4px 20px -2px rgba(20, 49, 89, 0.06);
+  --shadow-medium: 0 12px 32px -4px rgba(20, 49, 89, 0.10);
+  --shadow-highlight: 0 16px 40px -6px rgba(255, 117, 31, 0.25);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-body);
+  color: var(--color-text-main);
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tipografia Editorial */
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-script {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-style: italic;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-brand-blue);
+}
+
+/* Cards Padrão Essere */
+.essere-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-subtle);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.essere-card-hover:hover {
+  border-color: var(--border-card-hover);
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-2px);
+}
+
+.essere-card-blue {
+  background: linear-gradient(135deg, #143159 0%, #0B1D36 100%);
+  color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 14px 36px rgba(20, 49, 89, 0.22);
+}
+
+/* Botões de Ação Principal (Laranja Essere) */
+.btn-orange {
+  background-color: var(--color-primary-orange);
+  color: #FFFFFF !important;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 6px 20px var(--color-primary-orange-glow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  min-height: 52px;
+  padding: 0 24px;
+}
+
+.btn-orange:hover {
+  background-color: var(--color-primary-orange-hover);
+  box-shadow: 0 10px 30px rgba(255, 117, 31, 0.38);
+  transform: translateY(-2px);
+}
+
+.btn-orange:active {
+  transform: translateY(0);
+}
+
+/* Botão Secundário / Azul */
+.btn-blue {
+  background-color: var(--color-brand-blue);
+  color: #FFFFFF !important;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(20, 49, 89, 0.15);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  min-height: 48px;
+  padding: 0 20px;
+}
+
+.btn-blue:hover {
+  background-color: var(--color-brand-blue-hover);
+  transform: translateY(-1px);
+}
+
+/* Botão Outline */
+.btn-outline-white {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  min-height: 48px;
+  padding: 0 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-white:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: #FFFFFF;
+}
+
+/* Hero Section (Print Lovable) */
+.hero-wrapper {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 29, 54, 0.75) 0%, rgba(15, 23, 42, 0.88) 100%);
+  backdrop-filter: blur(1px);
+}
+
+.hero-badge-lines {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.hero-badge-lines::before,
+.hero-badge-lines::after {
+  content: '';
+  height: 1px;
+  width: 50px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Badges e Tags */
+.badge-orange {
+  background-color: var(--color-primary-orange-light);
+  color: var(--color-primary-orange-hover);
+  border: 1px solid rgba(255, 117, 31, 0.25);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+}
+
+.badge-blue {
+  background-color: var(--color-brand-blue-light);
+  color: var(--color-brand-blue);
+  border: 1px solid var(--color-brand-blue-border);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+}
+
+/* Carrossel de Fotos do Hotel */
+.hotel-main-img-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: #0F172A;
+}
+
+.hotel-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.hotel-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+  background-color: #E2E8F0;
+}
+
+.hotel-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hotel-thumb.active-thumb {
+  border-color: var(--color-primary-orange);
+  box-shadow: 0 0 0 3px var(--color-primary-orange-glow);
+  transform: scale(1.03);
+}
+
+.carousel-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  color: var(--color-brand-blue);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+.carousel-nav-btn:hover {
+  background-color: #FFFFFF;
+  color: var(--color-primary-orange);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Video Player Customizado */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px -10px rgba(20, 49, 89, 0.35);
+  border: 4px solid #1E293B;
+  background-color: #000000;
+}
+
+.video-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition: opacity 0.25s ease;
+}
+
+.video-play-btn {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background-color: var(--color-primary-orange);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 8px rgba(255, 117, 31, 0.35);
+  transition: all 0.2s ease;
+}
+
+.video-play-btn:hover {
+  transform: scale(1.1);
+  background-color: var(--color-primary-orange-hover);
+}
+
+/* Wizard Option Buttons */
+.wizard-option-btn {
+  background-color: #FFFFFF;
+  border: 1.5px solid var(--border-card);
+  border-radius: var(--radius-md);
+  color: var(--color-text-main);
+  font-weight: 500;
+  padding: 14px 16px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  text-align: left;
+  outline: none;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wizard-option-btn:hover {
+  border-color: var(--color-primary-orange);
+  background-color: var(--color-primary-orange-light);
+}
+
+.wizard-option-btn.active-option {
+  border-color: var(--color-primary-orange) !important;
+  background-color: var(--color-primary-orange-light) !important;
+  color: var(--color-primary-orange-hover) !important;
+  font-weight: 700;
+  box-shadow: 0 0 0 2px rgba(255, 117, 31, 0.2);
+}
+
+.wizard-step {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.wizard-step.hidden {
+  display: none !important;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+/* Sticky Bottom Bar Mobile */
+.sticky-mobile-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid #E2E8F0;
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.08);
+  padding: 12px 16px;
+}
+
+@media (min-width: 768px) {
+  .sticky-mobile-cta {
+    display: none !important;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-orange);
+}
